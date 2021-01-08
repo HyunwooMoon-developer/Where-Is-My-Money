@@ -1,0 +1,377 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+ul{
+   list-style-type: none;
+}
+
+.base{
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+   padding: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: linear-gradient(45deg, rgb(118, 245, 196), rgb(77, 204, 255));
+}
+
+header{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+header h1{
+   position: relative;
+   color: white;
+   font-size: 4em;
+   font-weight: bold;
+}
+
+header h1 a{
+   text-decoration: none;
+}
+header h1 a:link{
+   color: white;
+}
+header h1 a:hover{
+   color: white;
+}
+
+header h1 a:visited{
+   color: white;
+}
+
+
+header nav{
+   display: flex;
+   justify-content: center;
+}
+
+header nav ul{
+   display: flex;
+   padding-left: 0;
+   list-style: none;
+}
+
+header nav ul li a{
+   font-family: Arial, Helvetica, sans-serif;
+   color: white;
+   text-decoration: none;
+   margin: 0 20px 0 0 ;
+   font-weight: 400;
+}
+
+.main-div{
+position: relative;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;   
+
+}
+
+.main-div .left {
+   position: relative;
+   max-width: 600px;
+}
+
+.main-div .left h2{
+   color: white;
+   font-size: 2.5em;
+   line-height: 1.4em;
+   font-weight: 500;
+}
+
+.main-div .left a{
+   display: inline-block;
+   margin-top: 20px;
+   padding: 8px 20px;
+   background: black;
+   color: white;
+   border-radius: 40px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   text-decoration: none;
+}
+
+.main-div .right{
+   max-width: 600px;
+   display: flex;
+   margin-top: 50px;
+   justify-content: flex-end;
+}
+
+
+.main-image{
+   width: 90%;
+}
+
+footer{
+background-color: rgb(24, 179, 132);
+color: white;
+text-align: center;
+}
+
+/*--------------------------------------------------*/
+
+.about-div{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;   
+   
+  }
+  
+  .about-div .description {
+      position: relative;
+      max-width: 600px;
+      border: 1px solid black;
+      margin-left: 50px;
+  }
+  
+  .about-div .description h3{
+      color: white;
+      font-size: 1.5em;
+      line-height: 1.4em;
+      font-weight: 500;
+      text-align: center;
+  }
+  
+
+  
+  .about-div .img{
+      max-width: 600px;
+      display: flex;
+      margin-top: 50px;
+      justify-content: flex-end;
+  }
+  
+  
+  /*------------------------------------------*/
+.month{
+   padding: 70px 25px;
+   width: 100%;
+   background: rgb(255, 179, 217);
+}
+
+.month ul{
+   margin: 0;
+   padding: 0;
+}
+
+.month ul li{
+   color: white;
+   font-size: 20px;
+   text-transform: uppercase;
+}
+
+.month .prev{
+   float: left;
+   padding: 10px;
+}
+
+.month .next{
+   float: right;
+   padding: 10px;
+}
+
+.weekdays{
+   width: 100%;
+   margin: 0;
+   padding: 10px 0;
+   background: #ddd;   
+}
+
+.weekdays li{
+   display: inline-block;
+   width: 13.6%;
+   color: #666;
+   text-align: center;
+}
+
+.days{
+   width: 100%;
+   padding: 16px 0px;
+   background: white;
+   margin: 0;
+}
+
+.days li{
+   display: inline-block;
+   width: 13.6%;
+   text-align: center;
+   font-size: 12px;
+}
+
+.days li.active{
+   padding: 5px;
+   background: black;
+   color: white;
+}
+
+.days li.not-this-month{
+   color: gray;
+}
+
+/*-------------------------------------------------*/
+.income-main{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;   
+   
+  }
+
+  .income-main .calculator{
+   background: white;
+   position: relative;
+   width: 600px;
+   border: 2px solid black;
+   padding: 10px;
+   margin-top: 30px;
+}
+
+.income-main .calculator h3{
+   color: rgb(24, 179, 132);
+   font-size: 2em;
+   padding: 20px;
+   text-align: center;
+}
+.income-main .calculator h2{
+   text-align: center;
+   color: rgb(255, 179, 217);
+   font-size: 2.3em;
+   font-weight: bolder;
+}
+
+/*------------------------------------------------*/
+.spending-main{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;   
+   
+  } 
+
+.spending-list{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;   
+}
+
+.spending-list .spending-left {
+   flex: 1;
+   position: relative;
+   max-width: 300px;
+}
+
+.spending-list .spending-left ul{
+   background: white;
+
+}
+
+.spending-list .spending-left ul li{
+  margin-top: 20px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.spending-list .spending-left ul li.selected{
+   background: black;
+   color: white;
+}
+
+.spending-list .spending-right{
+   flex: 3;
+   max-width: 500px;
+   margin-top: 50px;
+   margin-right: 30px;
+   justify-content: center;
+   background: white;
+}
+
+.spending-list .spending-right ul li{
+   margin-top: 30px;
+   border: 1px solid black;
+   background: rgb(187, 187, 187);
+}
+
+.spending-list .spending-right button{
+   float: right;
+   border: 1px solid black;
+   background: black;
+   color: white;
+   font-weight: bold;
+   padding: 8px;
+   text-align: center;
+   border-radius: 100%;
+}
+
+/*----------------------------------------------*/
+
+.report-main{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;   
+   
+  } 
+
+.report-main .select-report{
+   flex: 1;
+   position: relative;
+   max-width: 600px;
+}
+
+.report-main .results{
+   flex: 3;
+   max-width: 800px;
+   margin-top: 50px;
+   margin-right: 30px;
+   justify-content: center;
+}
+
+.report-main .results ul{
+   background: white;
+}
+
+.report-main .results ul li{
+   margin-top: 20px;
+   margin-left: 10px;
+}
+
+.report-main .results ul li h3{
+   color: rgb(26, 187, 147);
+   font-size: 30px;
+}
+
+.report-main .results ul li h5{
+   color: rgb(172, 172, 172);
+   font-size: 20px;
+   margin-top: 30px;
+}
+
+.report-main .results ul li .report-income-detail{
+   border: 1px solid black;
+   background: rgb(240, 240, 240);
+  }
+
+.report-main .results ul li .report-spending-detail{
+border: 1px solid black;
+background: rgb(240, 240, 240);
+}
