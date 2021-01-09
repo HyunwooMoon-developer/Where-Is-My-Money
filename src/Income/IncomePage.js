@@ -100,7 +100,6 @@ class IncomePage extends Component {
                             <option value="23.5" name="23:30pm">11:30pm</option>   
                         </select>
                         <br />
-                        <p>start : {start}</p>
                         <label htmlFor="end-time">End Time : </label>
                         <select id="end-time" name="end-time" onChange={this.handleClickEnd}>
                             <option value="0" name="12:00am">12:00 am</option>
@@ -152,7 +151,6 @@ class IncomePage extends Component {
                             <option value="23" name="23:00pm">11:00 pm</option> 
                             <option value="23.5" name="23:30pm">11:30pm</option>   
                         </select>
-                        <p>end : {end}</p>
                     
                     <div id="calculate">
                         <label htmlFor="hourly-payment">Hourly-payment : </label>
@@ -186,9 +184,9 @@ class IncomePage extends Component {
                         <br />
                         <p>-----------------------------</p>
                         <br />
-                        <h5>This Week's Working hour : 40 hr</h5>
-                        <h5>This Week's Extra Income: $ 4.00</h5>
-                        <h5>This Week's Income : $ 484.00</h5>
+                        <h5>This Month Working hour : 40 hr</h5>
+                        <h5>This Month Extra Income: $ 4.00</h5>
+                        <h5>This Month Total Income : $ 484.00</h5>
                     </div>
                 </div>
                 <div className="calender">
