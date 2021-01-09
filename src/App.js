@@ -12,6 +12,8 @@ import SpendingPage from './Spending/SpendingPage';
 
 
 class App extends Component {
+  
+
   render() {
     return (
       <div>
