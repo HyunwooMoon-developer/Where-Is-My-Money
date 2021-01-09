@@ -10,13 +10,13 @@ class IncomePage extends Component {
         hourlyPay : 0,
         dailyExtra : 0,
     }
-    handleClikckStart = (e) => {
+    handleStart = (e) => {
         this.setState({
             start : e.target.value
         })
     }
 
-    handleClickEnd = (e) => {
+    handleEnd = (e) => {
         this.setState({
             end : e.target.value
         })
@@ -28,7 +28,7 @@ class IncomePage extends Component {
         })
     }
 
-    handleExtraIncome = (e) => {
+    handleDailyExtra = (e) => {
         console.log(e.target.value);
         this.setState({
             dailyExtra : e.target.value,
@@ -49,7 +49,7 @@ class IncomePage extends Component {
                         <br />
                     <form>    
                         <label htmlFor="start-time">Start Time : </label>
-                        <select id="start-time" name="start-time" onChange={this.handleClikckStart}>
+                        <select id="start-time" name="start-time" onChange={this.handleStart}>
                             <option value="0" name="12:00am">12:00 am</option>
                             <option value="0.5" name="12:30am">12:30am</option>
                             <option value="1" name="01:00am">01:00 am</option>
@@ -101,7 +101,7 @@ class IncomePage extends Component {
                         </select>
                         <br />
                         <label htmlFor="end-time">End Time : </label>
-                        <select id="end-time" name="end-time" onChange={this.handleClickEnd}>
+                        <select id="end-time" name="end-time" onChange={this.handleEnd}>
                             <option value="0" name="12:00am">12:00 am</option>
                             <option value="0.5" name="12:30am">12:30am</option>
                             <option value="1" name="01:00am">01:00 am</option>
@@ -165,7 +165,7 @@ class IncomePage extends Component {
                                 min="0.01"
                                 step="0.01"
                                 placeholder="$10.00"
-                                onChange={this.handleExtraIncome}
+                                onChange={this.handleDailyExtra}
                                  />
                         <button type="submit">submit</button>
                     </div>
