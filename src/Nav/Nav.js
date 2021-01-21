@@ -8,8 +8,8 @@ class Nav extends Component {
             <nav>
             <ul>
             <li><Link to={'/about'}>About</Link></li>
-            <li><Link to={'/income'}>Income</Link></li>
-            <li><Link to={'/spending'}>Spending</Link></li>
+            <li><Link to={'/incomes'}>Income</Link></li>
+            <li><Link to={'/slists'}>Spending</Link></li>
             <li><Link to={'/report'}>Report</Link></li>
             </ul>
         </nav>

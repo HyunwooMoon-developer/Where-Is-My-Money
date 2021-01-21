@@ -5,6 +5,9 @@ import { Link, Route} from 'react-router-dom';
 import AboutPage from './About/AboutPage';
 import './App.css';
 import config from './config';
+import myContext from './Context/Context';
+import AddIncome from './Income/AddIncome';
+import IncomeDetail from './Income/IncomeDetail';
 import IncomePage from './Income/IncomePage';
 import MainPage from './Main/MainPage';
 import Nav from './Nav/Nav';
@@ -147,8 +150,10 @@ class App extends Component {
       handleUpdateItem : this.handleUpdateItem,
       fetchAll  :this.fetchAll,
     }
+    //console.log("incomes: ", this.state.incomes)
     return (
-      <div>
+      <myContext.Provider value={contextValues}>
+      <div className="app">
         <section className="base">
         <header>
         <h1><Link to={'/'}>$Where is My Money?!</Link></h1>
@@ -157,12 +162,15 @@ class App extends Component {
     <main>
       <Route exact path='/' component={MainPage} />
       <Route path='/about' component={AboutPage} />
-      <Route path='/income' component={IncomePage} />
-      <Route path='/spending' component={SpendingPage} />
+      <Route path='/incomes' component={IncomePage} />
+      <Route path='/incomes/:income_id' component={IncomeDetail} />
+      <Route path='/add-income' component={AddIncome} />
+      <Route path='/slists' component={SpendingPage} />
       <Route path='/report' component={ReportPage} />
     </main>
         </section>
       </div>
+      </myContext.Provider>
     );
   }
 }

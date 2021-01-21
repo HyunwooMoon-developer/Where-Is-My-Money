@@ -1,9 +1,19 @@
 import React from 'react';
 
 const myContext = React.createContext({
-    start : 0,
-    end : 0,
-    dailyTotalHour : 0,
+    incomes : [],
+    spendingLists : [],
+    spendingItems : [],
+    handleAddIncome : () => {},
+    handleAddLIst  : () => {},
+    handleAddItem : () => {},
+    handleDeleteIncome : () => {},
+    handleDeleteList : () => {},
+    handleDeleteItem : () => {},
+    handleUpdateIncome : () => {},
+    handleUpdateList : () => {},
+    handleUpdateItem : () => {},
+    fetchAll : () => {},
 })
 
 export default myContext;
