@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import SpendingList from './SpendingList';
+import SpendingListItem from './SpendingListItem';
 import '../App.css';
+import SpendingListNav from './SpendingListNav';
 class SpendingPage extends Component {
     render() {
         return (
             <div className="spending-main">
                <div className="spending-list">
-                    <SpendingList />
+               <nav className="spending-left">
+                    <ul>
+                        <SpendingListNav />
+                    </ul>
+                </nav> 
                 <section className="spending-right">
                     <ul>
-                        <li>
-                            <p>01.03.2021</p>
-                            <p>KoreaTown Galleria <span>$ 60</span></p>
-                        </li>
-                        <li>
-                            <p>01.03.2021</p>
-                            <p>Beverly Center Shopping <span>$ 200</span></p>
-                            <p>shirt : $ 20</p>
-                            <p>pants : $ 20</p>
-                            <p>shoes : $ 140</p>
-                            <p> tax  : $ 20</p>
-                        </li>
+                      <SpendingListItem />
                     </ul>
                     <button>+</button>
                 </section>

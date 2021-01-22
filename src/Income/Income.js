@@ -18,7 +18,7 @@ class Income extends Component {
 
         const incomeId = this.props.id;
 
-        console.log(incomeId)
+        //console.log(incomeId)
         fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
             method : `DELETE`,
             headers : {
