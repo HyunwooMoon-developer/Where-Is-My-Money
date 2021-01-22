@@ -43,6 +43,8 @@ class SpendingList extends Component {
     }
 
     render() {
+        //we need to save the 'slist_id' to state somewhere before we route the component
+        //
         const {id, category} = this.props;
         return (
             <div>

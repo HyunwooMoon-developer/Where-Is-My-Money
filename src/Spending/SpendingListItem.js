@@ -2,33 +2,45 @@ import React, { Component } from 'react';
 import myContext from '../Context/Context';
 import SpendingItem from './SpendingItem';
 
-class SpendingList extends Component {
+class SpendingListItem extends Component {
     static defaultProps = {
-        match : {
-            params :{}
-        }
+       match : {
+           params : {}
+       }
     }
 
     static contextType = myContext;
 
+    
+    
     render() {
 
-        const { spendingItems = [], spendingLists = [] } = this.context;
-        console.log(spendingItems , spendingLists)
+        const { spendingItems = [] } = this.context;
+        //console.log(spendingItems )
+        //get slist_id from context instead of props
+        //context setup slist_id from state
         //console.log(spendingItems)
-        const itemId = spendingLists.id
-        console.log(itemId)
+        const listId = Number(this.props.match.params.slist_id)
+       // console.log(listId , typeof listId)
+        const filterItem = spendingItems.filter(item => {
+            if(!listId){
+                return spendingItems
+            }
+            return item.category_id === listId
+        })
+
+        
         
 
         return (
             <div>
             
                <li>
-                {spendingItems.map(item => 
+                {filterItem.map(filterItem => 
                     <SpendingItem 
-                        key={item.id}
+                        key={filterItem.id}
                         history={this.props.history}
-                        {...item}
+                        {...filterItem}
                     />
                 )}
                </li>
@@ -37,4 +49,4 @@ class SpendingList extends Component {
     }
 }
 
-export default SpendingList;
+export default SpendingListItem;

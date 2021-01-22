@@ -3,7 +3,11 @@ import SpendingListItem from './SpendingListItem';
 import '../App.css';
 import SpendingListNav from './SpendingListNav';
 import { Link } from 'react-router-dom';
+import myContext from '../Context/Context';
 class SpendingPage extends Component {
+
+    static contextType = myContext;
+
     render() {
         return (
             <div className="spending-main">
@@ -15,7 +19,10 @@ class SpendingPage extends Component {
                 </nav> 
                 <section className="spending-right">
                     <ul>
-                      <SpendingListItem />
+                    {/* one alternative is get the slist_id from state
+                     and pass slist_id as props
+                    */}
+                      <SpendingListItem {...this.props}/>
                     </ul>
                     <Link to={'/add-item'}><button>add</button></Link>
                 </section>

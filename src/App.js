@@ -172,6 +172,10 @@ class App extends Component {
       <Route path='/incomes' component={IncomePage} />
       <Route path='/edit/incomes/:income_id' component={EditIncome} />
       <Route path='/add-income' component={AddIncome} />
+      {/*spending page component will get the slist_id from state
+         our alternative is to pass the slist_id props
+         but it's to complicated 
+        */}
       <Route path='/slists/:slist_id' component={SpendingPage} />
       <Route path='/slists' component={SpendingPage} />
       <Route path='/add-list' component={AddSpendingList}/>

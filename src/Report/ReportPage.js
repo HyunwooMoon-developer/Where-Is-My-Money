@@ -14,12 +14,15 @@ class ReportPage extends Component {
     render() {
         const {incomes = [] , spendingItems= []} = this.context
        // console.log(incomes, spendingItems)
+       let incomeTotal = 0;
+       let spendingTotal = 0 ; 
+
         const incomeList = incomes.map(income => {
             const dailyWorkingHour = income.end_time - income.start_time
             const dailyWorkingIncome = dailyWorkingHour*income.hourly_payment
             const dailyTotal = dailyWorkingIncome + Number(income.daily_extra)
             //const TotalIncome = incomes.dailyTotal;
-            
+            incomeTotal += dailyTotal
             return(
                 <li key={income.id}>
                     <h4>Date : {income.date_created}</h4>
@@ -32,6 +35,7 @@ class ReportPage extends Component {
         })
 
         const spendingItemList = spendingItems.map(item=> {
+            spendingTotal += Number(item.spending)
             return(
                 <li key={item.id}>
                     <h4>Date : {item.date_created}</h4>
@@ -46,9 +50,11 @@ class ReportPage extends Component {
         return (
             <div className="report-main">
                             <div className="results">
+                                <h3>{incomeTotal}</h3>
                                 <ul>
                                     {incomeList}
                                 </ul>
+                                <h3>{spendingTotal}</h3>
                                 <ul>    
                                   {spendingItemList}
                                 </ul>

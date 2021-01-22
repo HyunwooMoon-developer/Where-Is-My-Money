@@ -16,6 +16,7 @@ class SpendingListNav extends Component {
     render() {
         const {spendingLists = [] } = this.context;
         //console.log(spendingLists)
+        
 
         return (
             <div>
