@@ -13,11 +13,12 @@ class SpendingList extends Component {
 
     render() {
 
-        const { spendingItems = [] } = this.context;
-        console.log(spendingItems)
+        const { spendingItems = [], spendingLists = [] } = this.context;
+        console.log(spendingItems , spendingLists)
         //console.log(spendingItems)
-        const itemId = this.props.match.params
-        console.log(itemId , typeof itemId)
+        const itemId = spendingLists.id
+        console.log(itemId)
+        
 
         return (
             <div>

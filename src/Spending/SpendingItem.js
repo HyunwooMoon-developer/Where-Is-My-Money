@@ -43,8 +43,8 @@ class SpendingItem extends Component {
     }
 
     render() {
-        const {id, date_created, item_name, spending, content} = this.props;
-        //console.log(id)
+        const {id, date_created,item_name, spending, content} = this.props;
+      //  console.log(category_id)
         return (
             <div>
                 <h5>{item_name}</h5>

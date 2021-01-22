@@ -22,7 +22,7 @@ class AddSpendingItem extends Component {
             content : e.target['content'].value,
             date_created : new Date(),
         }
-        console.log('newitem : ', newItem )
+        //console.log('newitem : ', newItem )
 
         fetch(`${config.API_ENDPOINT}/api/sitems`, {
             method : 'POST',
@@ -57,7 +57,7 @@ class AddSpendingItem extends Component {
                                                             value={list.id}>
                                                                 {list.category}
                                                             </option>)
-        console.log(optionLists)
+        //console.log(optionLists)
         return (
             <div>
                 <h2>Add Item</h2>

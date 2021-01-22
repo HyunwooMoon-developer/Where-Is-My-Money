@@ -20,9 +20,9 @@ class EditSpendingItem extends Component {
 
     static contextType = myContext;
 
-    componentDidMount(){
-        const itemId = this.props.match.params.slist_id
-        console.log(itemId)
+   /* componentDidMount(){
+        const itemId = this.props.match.params.sitem_id
+        //console.log(itemId , this.props)
         fetch(`${config.API_ENDPOINT}/api/sitems/${itemId}`,{
             method: 'GET',
             headers : {
@@ -33,7 +33,7 @@ class EditSpendingItem extends Component {
             if(!res.ok){
                 return res.json().then(e=> Promise.reject(e))
             }
-            //return res.json()
+           return res.json()
         })
         .then(item=> {
             this.setState({
@@ -48,35 +48,35 @@ class EditSpendingItem extends Component {
             console.error(err)
         })
     }
-
+*/
     handleCategory = e => {
         this.setState({
-            category_id : e.target['category_id'].value
+            category_id : e.target.value
         })
     }
 
     handleItem = e => {
         this.setState({
-            item_name : e.target['item_name'].value,
+            item_name : e.target.value,
         })
     }
 
     handleSpending = e => {
         this.setState({
-            spending : e.target['spending'].value,
+            spending : e.target.value,
         })
     }
 
     handleContent = e => {
         this.setState({
-            content : e.target['content'].value,
+            content : e.target.value,
         })
     }
 
     handleUpdate = e =>{
         e.preventDefault();
 
-        const itemId = Number(this.props.match.params.id)
+        const itemId = this.props.match.params.sitem_id
         const {id, category_id, item_name, spending, content} = this.state ; 
         const updateItem = {id, category_id, item_name, spending, content }
     
@@ -91,9 +91,9 @@ class EditSpendingItem extends Component {
             if(!res.ok){
                 return res.json().then(e=> Promise.reject(e))
             }
-            return res.json()
+           // return res.json()
         })
-        .then(()=> {
+        .then(item=> {
             return this.context.fetchAll()
         })
         .then(()=>{
@@ -135,7 +135,7 @@ class EditSpendingItem extends Component {
                     {optionLists}
                 </select>
                 <br />
-                <button type="submit">Add</button>
+                <button type="submit">Edit</button>
                 <button type="button" onClick={this.handleClickCancel}>cancel</button>
             </form>
         </div>
