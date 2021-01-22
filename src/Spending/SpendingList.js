@@ -19,7 +19,7 @@ class SpendingList extends Component {
         const listId = this.props.id
         console.log(listId)
         
-        fetch(`/${config.API_ENDPOINT}/api/slists/${listId}`, {
+        fetch(`${config.API_ENDPOINT}/api/slists/${listId}`, {
             method : 'DELETE',
             headers : {
                 'content-type'  : 'application/json'
@@ -47,7 +47,7 @@ class SpendingList extends Component {
         return (
             <div>
                <Link to={`/slists/${id}`}><h4>{category}</h4></Link> 
-               <Link to={'/'}><button>edit</button></Link>             
+               <Link to={`/edit/slists/${id}`}><button>edit</button></Link>             
                <button onClick={this.handleClickDelete}>delete</button>
             </div>
         );

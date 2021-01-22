@@ -43,7 +43,7 @@ class SpendingItem extends Component {
     }
 
     render() {
-        const {date_created, item_name, spending, content} = this.props;
+        const {id, date_created, item_name, spending, content} = this.props;
         //console.log(id)
         return (
             <div>
@@ -51,9 +51,8 @@ class SpendingItem extends Component {
                 <p>{spending}</p>
                 <p>{content}</p>
                 <p>{date_created}</p>
-                <Link to={'/slists'}><button>Edit</button></Link>
                 <button onClick={this.handleClickDelete}>Delete</button>
-
+                <Link to={`/edit/sitems/${id}`}><button>Edit</button></Link>
             </div>
         );
     }

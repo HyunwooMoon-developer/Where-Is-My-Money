@@ -27,7 +27,7 @@ class SpendingListNav extends Component {
                         history={this.props.history}
                         {...list}
                     />)}
-                <Link to={'/'}><button>add</button></Link>
+                <Link to={'/add-list'}><button>add</button></Link>
                 </li>
             </div>
         );

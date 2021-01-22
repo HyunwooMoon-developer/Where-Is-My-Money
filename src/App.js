@@ -14,6 +14,9 @@ import MainPage from './Main/MainPage';
 import Nav from './Nav/Nav';
 import ReportPage from './Report/ReportPage';
 import AddSpendingItem from './Spending/AddSpendingItem';
+import AddSpendingList from './Spending/AddSpendingList';
+import EditSpendingItem from './Spending/EditSpendingItem';
+import EditSpendingList from './Spending/EditSpendingList';
 import SpendingPage from './Spending/SpendingPage';
 
 
@@ -167,11 +170,14 @@ class App extends Component {
       <Route path='/about' component={AboutPage} />
       <Route path='/incomes/:income_id' component={IncomeDetail} />
       <Route path='/incomes' component={IncomePage} />
-      <Route path='/edit/:income_id' component={EditIncome} />
+      <Route path='/edit/incomes/:income_id' component={EditIncome} />
       <Route path='/add-income' component={AddIncome} />
       <Route path='/slists/:slist_id' component={SpendingPage} />
       <Route path='/slists' component={SpendingPage} />
+      <Route path='/add-list' component={AddSpendingList}/>
+      <Route path='/edit/slists/:slist_id' component={EditSpendingList} />
       <Route path='/add-item' component={AddSpendingItem} />
+      <Route path='/edit/sitems/:sitem_id' component={EditSpendingItem} />
       <Route path='/report' component={ReportPage} />
       </Switch>
     </main>

@@ -5,7 +5,7 @@ import myContext from '../Context/Context';
 class AddSpendingItem extends Component {
     static defaultProps = {
         history : {
-            push : {}
+            push : () => {}
         }
     }
 

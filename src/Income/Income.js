@@ -48,7 +48,7 @@ class Income extends Component {
            <li>
                <h3><Link to={`/incomes/${id}`}>{id}</Link></h3>
                 <h5>created date : {date_created}</h5>
-                <Link to={`/edit/${id}`}><button>edit</button></Link>
+                <Link to={`/edit/incomes/${id}`}><button>edit</button></Link>
                 <button
                type="button"
                onClick={this.handleCilickDelete}
