@@ -16,6 +16,7 @@ class ReportPage extends Component {
        // console.log(incomes, spendingItems)
        let incomeTotal = 0;
        let spendingTotal = 0 ; 
+       
 
         const incomeList = incomes.map(income => {
             const dailyWorkingHour = income.end_time - income.start_time
@@ -46,7 +47,7 @@ class ReportPage extends Component {
             )
         })
 
-
+        
         return (
             <div className="report-main">
                             <div className="results">
@@ -58,6 +59,7 @@ class ReportPage extends Component {
                                 <ul>    
                                   {spendingItemList}
                                 </ul>
+                                <h3>total  : {incomeTotal - spendingTotal}</h3>
                             </div>
             </div>
         );
