@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import myContext from '../Context/Context';
+import SpendingList from './SpendingList';
 
 class SpendingListNav extends Component {
     static defaultProps= {
@@ -11,12 +12,6 @@ class SpendingListNav extends Component {
 
     static contextType = myContext;
 
-    handleClickDelete = e => {
-        e.preventDefault()
-
-        const listId= this.props.match.params.slist_id
-        console.log(this.props)
-    }
 
     render() {
         const {spendingLists = [] } = this.context;
@@ -24,14 +19,16 @@ class SpendingListNav extends Component {
 
         return (
             <div>
-                {spendingLists.map(list=> 
-                <li key={list.id}>
-                    <NavLink to={'/slists'}>
-                        {list.category}
-                    </NavLink>
-                    <button onClick={this.handleClickDelete}>delete</button>
-                </li>)}
+                <li><Link to={'/slists'}>All</Link></li>
+                <li>
+                {spendingLists.map(list=>
+                    <SpendingList 
+                        key={list.id}
+                        history={this.props.history}
+                        {...list}
+                    />)}
                 <Link to={'/'}><button>add</button></Link>
+                </li>
             </div>
         );
     }

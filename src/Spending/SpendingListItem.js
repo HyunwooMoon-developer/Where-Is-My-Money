@@ -14,9 +14,14 @@ class SpendingList extends Component {
     render() {
 
         const { spendingItems = [] } = this.context;
+        console.log(spendingItems)
         //console.log(spendingItems)
+        const itemId = this.props.match.params
+        console.log(itemId , typeof itemId)
+
         return (
             <div>
+            
                <li>
                 {spendingItems.map(item => 
                     <SpendingItem 

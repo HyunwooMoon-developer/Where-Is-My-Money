@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SpendingListItem from './SpendingListItem';
 import '../App.css';
 import SpendingListNav from './SpendingListNav';
+import { Link } from 'react-router-dom';
 class SpendingPage extends Component {
     render() {
         return (
@@ -16,10 +17,10 @@ class SpendingPage extends Component {
                     <ul>
                       <SpendingListItem />
                     </ul>
-                    <button>+</button>
+                    <Link to={'/add-item'}><button>add</button></Link>
                 </section>
             </div>
-            <div className="calender">
+            {/*<div className="calender">
                 <div className="month">
                      <ul>
                          <li className="prev">&#10094;</li>
@@ -79,7 +80,7 @@ class SpendingPage extends Component {
                     <li className="not-this-month">5</li>
                     <li className="not-this-month">6</li>
                 </ul>
-             </div>
+            </div>*/}
             </div>
         );
     }

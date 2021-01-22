@@ -34,7 +34,7 @@ class SpendingItem extends Component {
             return this.context.fetchAll()
         })
         .then(()=> {
-            return this.props.history.push('/')
+            return this.props.history.push('/slists')
         })
         .catch(err=> {
             console.error(err)
@@ -43,14 +43,14 @@ class SpendingItem extends Component {
     }
 
     render() {
-        const {id, date_created, item_name, spending, content} = this.props;
+        const {date_created, item_name, spending, content} = this.props;
         //console.log(id)
         return (
             <div>
-                <h2>{item_name}</h2>
-                <h3>{spending}</h3>
-                <h3>{content}</h3>
-                <h3>{date_created}</h3>
+                <h5>{item_name}</h5>
+                <p>{spending}</p>
+                <p>{content}</p>
+                <p>{date_created}</p>
                 <Link to={'/slists'}><button>Edit</button></Link>
                 <button onClick={this.handleClickDelete}>Delete</button>
 
