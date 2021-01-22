@@ -44,6 +44,10 @@ class AddIncome extends Component {
         })
     }
 
+    handleClickCancel = () => {
+        this.props.history.push('/incomes')
+    }
+
     render() {
         return (
             <div className="income-main">
@@ -175,26 +179,9 @@ class AddIncome extends Component {
                                 
                                  />
                         <button type="submit">submit</button>
+                        <button type="button" onClick={this.handleClickCancel}>Cancel</button>
                     </div>
                 </form>
-                   {/* <div>
-                        <br />
-                        <h3>Result</h3>
-                        <br />
-                        <div>
-                        <ul>
-                            <li><h5>Today's Working hour : {dailyWorkingHour} hr </h5></li>
-                            <li><h5>Today's Exta Income: $ {dailyExtra}</h5></li>
-                            <li><h5>Today's Income : $ {dailtyTotal} </h5></li>
-                        </ul>
-                        </div>
-                        <br />
-                        <p>-----------------------------</p>
-                        <br />
-                        <h5>This Month Working hour : 40 hr</h5>
-                        <h5>This Month Extra Income: $ 4.00</h5>
-                        <h5>This Month Total Income : $ 484.00</h5>
-                   </div>*/}
                 </div>
             </div>
         );

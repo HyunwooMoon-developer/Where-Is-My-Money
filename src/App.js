@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
-import { Link, Route} from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
 import AboutPage from './About/AboutPage';
 import './App.css';
 import config from './config';
 import myContext from './Context/Context';
 import AddIncome from './Income/AddIncome';
+import EditIncome from './Income/EditIncome';
 import IncomeDetail from './Income/IncomeDetail';
 import IncomePage from './Income/IncomePage';
 import MainPage from './Main/MainPage';
@@ -160,13 +161,16 @@ class App extends Component {
         <Nav />
     </header>
     <main>
+      <Switch>
       <Route exact path='/' component={MainPage} />
       <Route path='/about' component={AboutPage} />
-      <Route path='/incomes' component={IncomePage} />
       <Route path='/incomes/:income_id' component={IncomeDetail} />
+      <Route path='/incomes' component={IncomePage} />
+      <Route path='/edit/:income_id' component={EditIncome} />
       <Route path='/add-income' component={AddIncome} />
       <Route path='/slists' component={SpendingPage} />
       <Route path='/report' component={ReportPage} />
+      </Switch>
     </main>
         </section>
       </div>

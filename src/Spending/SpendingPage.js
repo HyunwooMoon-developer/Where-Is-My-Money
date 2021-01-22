@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
+import SpendingList from './SpendingList';
 import '../App.css';
 class SpendingPage extends Component {
     render() {
         return (
             <div className="spending-main">
                <div className="spending-list">
-                <section className="spending-left">
-                    <ul>
-                        <li>All</li>
-                        <li>Home/Util</li>
-                        <li>Restaurant</li>
-                        <li className="selected">Shopping</li>
-                        <li>Finance</li>
-                        <li>etc</li>
-                    </ul>
-                </section>
+                    <SpendingList />
                 <section className="spending-right">
                     <ul>
                         <li>
