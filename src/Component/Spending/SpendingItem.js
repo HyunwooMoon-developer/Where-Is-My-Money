@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import config from '../config';
-import myContext from '../Context/Context';
+import config from '../../config';
+import myContext from '../../Context/Context'
 
 class SpendingItem extends Component {
     static defaultProps= {
@@ -17,7 +17,7 @@ class SpendingItem extends Component {
         e.preventDefault();
 
         const itemId = this.props.id;
-        console.log(itemId)
+        //console.log(itemId)
 
         fetch(`${config.API_ENDPOINT}/api/sitems/${itemId}`, {
             method : 'DELETE' , 

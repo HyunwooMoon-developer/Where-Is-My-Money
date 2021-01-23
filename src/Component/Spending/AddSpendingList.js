@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import config from '../config';
-import myContext from '../Context/Context';
+import config from '../../config';
+import myContext from '../../Context/Context'
 
 class AddSpendingList extends Component {
     static defaultProps = {
@@ -18,7 +18,7 @@ class AddSpendingList extends Component {
             user_id : 1,
             category : e.target['category'].value,
         }
-        console.log('newlist' , newList)
+        //console.log('newlist' , newList)
 
         fetch(`${config.API_ENDPOINT}/api/slists`, {
             method : 'POST',

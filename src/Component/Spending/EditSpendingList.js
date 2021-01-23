@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import config from '../config';
-import myContext from '../Context/Context';
+import config from '../../config';
+import myContext from '../../Context/Context'
 
 class EditSpendingList extends Component {
     static defaultProps = {
@@ -20,7 +20,7 @@ class EditSpendingList extends Component {
 
     componentDidMount(){
         const listId = this.props.match.params.slist_id
-        console.log(listId)
+        //console.log(listId)
         fetch(`${config.API_ENDPOINT}/api/slists/${listId}`,{
             method: 'GET',
             headers : {
@@ -55,7 +55,7 @@ class EditSpendingList extends Component {
         e.preventDefault();
 
         const listId = Number(this.props.match.params.slist_id)
-        console.log('listid' , listId)
+        //console.log('listid' , listId)
         const {id, user_id, category} = this.state;
         const updateList = {id, user_id, category}
 

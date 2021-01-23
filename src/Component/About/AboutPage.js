@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
-import mainImage from '../img/main-money.jpg';
-import '../App.css';
+import mainImage from '../img/main-money.jpg'
+import '../../Component/App/App.css'
 
 class AboutPage extends Component {
     render() {

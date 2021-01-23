@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import myContext from '../Context/Context';
+import myContext from '../../Context/Context'
 import SpendingItem from './SpendingItem';
 
 class SpendingListItem extends Component {

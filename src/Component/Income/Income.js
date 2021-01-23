@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import config from '../config';
-import myContext from '../Context/Context';
+import config from '../../config';
+import myContext from '../../Context/Context'
 //import {format} from 'date-fns';
 import { Link } from 'react-router-dom';
 

@@ -2,22 +2,22 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import { Link, Route, Switch} from 'react-router-dom';
-import AboutPage from './About/AboutPage';
+import AboutPage from '../About/AboutPage';
 import './App.css';
-import config from './config';
-import myContext from './Context/Context';
-import AddIncome from './Income/AddIncome';
-import EditIncome from './Income/EditIncome';
-import IncomeDetail from './Income/IncomeDetail';
-import IncomePage from './Income/IncomePage';
-import MainPage from './Main/MainPage';
-import Nav from './Nav/Nav';
-import ReportPage from './Report/ReportPage';
-import AddSpendingItem from './Spending/AddSpendingItem';
-import AddSpendingList from './Spending/AddSpendingList';
-import EditSpendingItem from './Spending/EditSpendingItem';
-import EditSpendingList from './Spending/EditSpendingList';
-import SpendingPage from './Spending/SpendingPage';
+import config from '../../config';
+import myContext from '../../Context/Context'
+import AddIncome from '../Income/AddIncome';
+import EditIncome from '../Income/EditIncome';
+import IncomeDetail from '../Income/IncomeDetail';
+import IncomePage from '../Income/IncomePage';
+import MainPage from '../Main/MainPage';
+import Nav from '../Nav/Nav';
+import ReportPage from '../Report/ReportPage';
+import AddSpendingItem from '../Spending/AddSpendingItem';
+import AddSpendingList from '../Spending/AddSpendingList';
+import EditSpendingItem from '../Spending/EditSpendingItem';
+import EditSpendingList from '../Spending/EditSpendingList';
+import SpendingPage from '../Spending/SpendingPage';
 
 
 class App extends Component {

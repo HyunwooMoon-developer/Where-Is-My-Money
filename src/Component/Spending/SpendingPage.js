@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import SpendingListItem from './SpendingListItem';
-import '../App.css';
+import '../App/App.css';
 import SpendingListNav from './SpendingListNav';
 import { Link } from 'react-router-dom';
-import myContext from '../Context/Context';
+import myContext from '../../Context/Context'
 class SpendingPage extends Component {
 
     static contextType = myContext;

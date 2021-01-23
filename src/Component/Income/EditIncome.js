@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import config from '../config';
-import myContext from '../Context/Context';
+import config from '../../config';
+import myContext from '../../Context/Context'
 
 class EditIncome extends Component {
     static contextType = myContext;
@@ -81,7 +81,7 @@ class EditIncome extends Component {
         e.preventDefault();
 
         const incomeId = Number(this.props.match.params.income_id)
-        console.log(incomeId)
+        //console.log(incomeId)
         const {id, start_time, end_time, hourly_payment, daily_extra ,user_id} = this.state;
         const updatedIncome = {id, start_time, end_time, hourly_payment, daily_extra ,user_id}
 

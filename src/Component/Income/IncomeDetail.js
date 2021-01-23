@@ -2,7 +2,7 @@
 //import { number } from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import myContext from '../Context/Context';
+import myContext from '../../Context/Context'
 import Income from './Income';
 
 class IncomeDetail extends Component {

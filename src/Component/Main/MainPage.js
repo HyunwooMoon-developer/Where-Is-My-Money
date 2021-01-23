@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import mainImage from '../img/main-money.jpg';
-import '../App.css';
+import '../App/App.css';
 
 class MainPage extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import config from '../config';
-import myContext from '../Context/Context';
+import config from '../../config';
+import myContext from '../../Context/Context'
 
 class SpendingList extends Component {
     static defaultProps ={
@@ -17,7 +17,7 @@ class SpendingList extends Component {
         e.preventDefault();
 
         const listId = this.props.id
-        console.log(listId)
+        //console.log(listId)
         
         fetch(`${config.API_ENDPOINT}/api/slists/${listId}`, {
             method : 'DELETE',
