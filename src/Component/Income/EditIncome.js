@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class EditIncome extends Component {
     static contextType = myContext;
@@ -25,7 +26,8 @@ class EditIncome extends Component {
         fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
             method : 'GET',
             headers : {
-                'Content-type' : 'application/json'
+                'Content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
         .then(res=> {
@@ -88,7 +90,8 @@ class EditIncome extends Component {
         fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
             method : 'PATCH',
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization' : `basic ${TokenService.getAuthToken()}`
             },
             body : JSON.stringify(updatedIncome)
         })

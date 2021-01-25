@@ -18,6 +18,9 @@ import AddSpendingList from '../Spending/AddSpendingList';
 import EditSpendingItem from '../Spending/EditSpendingItem';
 import EditSpendingList from '../Spending/EditSpendingList';
 import SpendingPage from '../Spending/SpendingPage';
+//import LoginForm from '../Login/LoginForm';
+import LoginPage from '../Login/LoginPage';
+import RegistrationForm from '../../RegistrationForm/RegistrationForm';
 
 
 class App extends Component {
@@ -29,7 +32,7 @@ class App extends Component {
 
   fetchAll = () => {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/api/incomes`),
+      fetch(`${config.API_ENDPOINT}/api/incomes`,),
       fetch(`${config.API_ENDPOINT}/api/slists`),
       fetch(`${config.API_ENDPOINT}/api/sitems`)
     ])
@@ -183,6 +186,8 @@ class App extends Component {
       <Route path='/add-item' component={AddSpendingItem} />
       <Route path='/edit/sitems/:sitem_id' component={EditSpendingItem} />
       <Route path='/report' component={ReportPage} />
+      <Route path='/login' component={LoginPage} />
+      <Route path='/register' component={RegistrationForm} />
       </Switch>
     </main>
         </section>

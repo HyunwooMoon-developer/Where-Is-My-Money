@@ -3,6 +3,7 @@ import config from '../../config';
 import myContext from '../../Context/Context'
 //import {format} from 'date-fns';
 import { Link } from 'react-router-dom';
+import TokenService from '../../service/token -service';
 
 class Income extends Component {
     static defaultProps = {
@@ -22,7 +23,8 @@ class Income extends Component {
         fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
             method : `DELETE`,
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
         .then(res=> {

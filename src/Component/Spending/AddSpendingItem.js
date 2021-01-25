@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config'
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class AddSpendingItem extends Component {
     static defaultProps = {
@@ -27,7 +28,8 @@ class AddSpendingItem extends Component {
         fetch(`${config.API_ENDPOINT}/api/sitems`, {
             method : 'POST',
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body : JSON.stringify(newItem)
         })

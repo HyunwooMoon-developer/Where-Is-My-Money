@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class SpendingItem extends Component {
     static defaultProps= {
@@ -22,7 +23,8 @@ class SpendingItem extends Component {
         fetch(`${config.API_ENDPOINT}/api/sitems/${itemId}`, {
             method : 'DELETE' , 
             headers : {
-                'content-tpye' : 'application/json'
+                'content-tpye' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
         .then(res => {

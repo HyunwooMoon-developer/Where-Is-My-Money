@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config'
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class AddIncome extends Component {
     static defaultProps = {
@@ -22,11 +23,12 @@ class AddIncome extends Component {
             date_created : new Date(),
             user_id : 1,
         }
-        console.log("newIncome : ", newIncome)
+        //console.log("newIncome : ", newIncome)
         fetch(`${config.API_ENDPOINT}/api/incomes`, {
             method : 'POST',
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body:  JSON.stringify(newIncome)
         })

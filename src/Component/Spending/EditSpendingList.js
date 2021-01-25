@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class EditSpendingList extends Component {
     static defaultProps = {
@@ -62,7 +63,8 @@ class EditSpendingList extends Component {
         fetch(`${config.API_ENDPOINT}/api/slists/${listId}`,{
             method : 'PATCH',
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body : JSON.stringify(updateList)
         })

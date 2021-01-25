@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class EditSpendingItem extends Component {
     static defaultProps = {
@@ -83,7 +84,8 @@ class EditSpendingItem extends Component {
         fetch(`${config.API_ENDPOINT}/api/sitems/${itemId}`, {
             method : 'PATCH',
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body : JSON.stringify(updateItem)
         })

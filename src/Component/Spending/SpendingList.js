@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import myContext from '../../Context/Context'
+import TokenService from '../../service/token -service';
 
 class SpendingList extends Component {
     static defaultProps ={
@@ -22,7 +23,8 @@ class SpendingList extends Component {
         fetch(`${config.API_ENDPOINT}/api/slists/${listId}`, {
             method : 'DELETE',
             headers : {
-                'content-type'  : 'application/json'
+                'content-type'  : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
         .then(res => {

@@ -23,11 +23,11 @@ class IncomeDetail extends Component {
     render() {
         const {incomes =[]} = this.context;
         const incomeId = Number(this.props.match.params.income_id)
-       console.log("income/incomeId : ", incomes, incomeId, typeof incomeId)
+       //console.log("income/incomeId : ", incomes, incomeId, typeof incomeId)
         const detailIncome = incomes.find(inc=> 
            inc.id === incomeId
        ) || {id:''}
-       console.log('detailIncome', detailIncome , detailIncome.start_time)
+       //console.log('detailIncome', detailIncome , detailIncome.start_time)
         //ßconsole.log(detailIncome);
        const start_time = detailIncome.start_time
        const end_time = detailIncome.end_time
