@@ -21,7 +21,6 @@ class AddIncome extends Component {
             hourly_payment : e.target['hourly_payment'].value,
             daily_extra : e.target['daily_extra'].value,
             date_created : new Date(),
-            user_id : 1,
         }
         //console.log("newIncome : ", newIncome)
         fetch(`${config.API_ENDPOINT}/api/incomes`, {

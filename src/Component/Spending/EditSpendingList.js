@@ -25,7 +25,8 @@ class EditSpendingList extends Component {
         fetch(`${config.API_ENDPOINT}/api/slists/${listId}`,{
             method: 'GET',
             headers : {
-                'content-type'  :'application/json'
+                'content-type'  :'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
         .then(res => {

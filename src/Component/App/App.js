@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
-import { Link, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import AboutPage from '../About/AboutPage';
 import './App.css';
 import config from '../../config';
@@ -20,7 +20,10 @@ import EditSpendingList from '../Spending/EditSpendingList';
 import SpendingPage from '../Spending/SpendingPage';
 //import LoginForm from '../Login/LoginForm';
 import LoginPage from '../Login/LoginPage';
-import RegistrationForm from '../../RegistrationForm/RegistrationForm';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import ErrorBoundary from '../../Route/ErrorBoundry/ErrorBoundary';
+import PublicRoute from '../Util/PublicRoute';
+import PrivateRoute from '../Util/PrivateRoute';
 
 
 class App extends Component {
@@ -28,6 +31,7 @@ class App extends Component {
     incomes : [],
     spendingLists : [],
     spendingItems  : [],
+    isLoggedIn : false,
   };
 
   fetchAll = () => {
@@ -157,42 +161,43 @@ class App extends Component {
       handleUpdateList : this.handleUpdateList,
       handleUpdateItem : this.handleUpdateItem,
       fetchAll  :this.fetchAll,
+      isLoggedIn :this.state.isLoggedIn,
     }
     //console.log("incomes: ", this.state.incomes)
     return (
-      <myContext.Provider value={contextValues}>
       <div className="app">
-        <section className="base">
-        <header>
-        <h1><Link to={'/'}>$Where is My Money?!</Link></h1>
-        <Nav />
-    </header>
-    <main>
-      <Switch>
-      <Route exact path='/' component={MainPage} />
-      <Route path='/about' component={AboutPage} />
-      <Route path='/incomes/:income_id' component={IncomeDetail} />
-      <Route path='/incomes' component={IncomePage} />
-      <Route path='/edit/incomes/:income_id' component={EditIncome} />
-      <Route path='/add-income' component={AddIncome} />
-      {/*spending page component will get the slist_id from state
-         our alternative is to pass the slist_id props
-         but it's to complicated 
-        */}
-      <Route path='/slists/:slist_id' component={SpendingPage} />
-      <Route path='/slists' component={SpendingPage} />
-      <Route path='/add-list' component={AddSpendingList}/>
-      <Route path='/edit/slists/:slist_id' component={EditSpendingList} />
-      <Route path='/add-item' component={AddSpendingItem} />
-      <Route path='/edit/sitems/:sitem_id' component={EditSpendingItem} />
-      <Route path='/report' component={ReportPage} />
-      <Route path='/login' component={LoginPage} />
-      <Route path='/register' component={RegistrationForm} />
-      </Switch>
-    </main>
-        </section>
+        <header className="app_header">
+           <h1><Link to={'/'}>$Where is My Money?!</Link></h1>
+           <Nav />
+        </header>
+        <main className="app_main">
+          <ErrorBoundary >
+          <myContext.Provider value={contextValues}>
+          <Switch>
+          <Route exact path='/' component={MainPage} />
+          <Route path='/about' component={AboutPage} />
+          <PrivateRoute path='/incomes/:income_id' component={IncomeDetail} />
+          <PrivateRoute path='/incomes' component={IncomePage} />
+          <PrivateRoute path='/edit/incomes/:income_id' component={EditIncome} />
+          <PrivateRoute path='/add-income' component={AddIncome} />
+          {/*spending page component will get the slist_id from state
+            our alternative is to pass the slist_id props
+            but it's to complicated 
+            */}
+          <PrivateRoute path='/slists/:slist_id' component={SpendingPage} />
+          <PrivateRoute path='/slists' component={SpendingPage} />
+          <PrivateRoute path='/add-list' component={AddSpendingList}/>
+          <PrivateRoute path='/edit/slists/:slist_id' component={EditSpendingList} />
+          <PrivateRoute path='/add-item' component={AddSpendingItem} />
+          <PrivateRoute path='/edit/sitems/:sitem_id' component={EditSpendingItem} />
+          <PrivateRoute path='/report' component={ReportPage} />
+          <PublicRoute path='/login' component={LoginPage} />
+          <PublicRoute path='/register' component={RegistrationForm} />
+          </Switch>
+          </myContext.Provider>
+          </ErrorBoundary>
+        </main>
       </div>
-      </myContext.Provider>
     );
   }
 }

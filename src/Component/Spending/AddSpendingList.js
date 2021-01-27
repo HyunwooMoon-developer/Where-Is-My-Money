@@ -16,7 +16,7 @@ class AddSpendingList extends Component {
         e.preventDefault();
 
         const newList = {
-            user_id : 1,
+
             category : e.target['category'].value,
         }
         //console.log('newlist' , newList)

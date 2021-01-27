@@ -91,7 +91,7 @@ class EditIncome extends Component {
             method : 'PATCH',
             headers : {
                 'content-type' : 'application/json',
-                'authorization' : `basic ${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body : JSON.stringify(updatedIncome)
         })

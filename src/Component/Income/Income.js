@@ -48,7 +48,7 @@ class Income extends Component {
         const {id, date_created} = this.props;
         return (
            <li>
-               <h3><Link to={`/incomes/${id}`}>{id}</Link></h3>
+               <h3><Link to={`/incomes/${id}`}>{date_created}</Link></h3>
                 <h5>created date : {date_created}</h5>
                 <Link to={`/edit/incomes/${id}`}><button>edit</button></Link>
                 <button

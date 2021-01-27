@@ -1,0 +1,34 @@
+.about_page{
+    position: relative;
+    margin-top : 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    box-sizing: border-box;
+}
+
+.about_left{
+    padding-left: 40px;
+    flex: 0 0 50%;
+}
+
+.about_left .img{
+    margin-bottom: 20px;
+    width :  100%;
+}
+
+
+
+.about_right{
+    position: relative;
+    max-width: 600px;
+    padding-right: 60px;
+    box-sizing: border-box;
+}
+
+.about_right h3{
+    color: white;
+    font-size: 40px;
+    border-bottom : 5px solid white;
+}
