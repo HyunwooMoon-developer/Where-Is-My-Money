@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import myContext from '../../Context/Context'
 import Income from './Income';
+import {format} from 'date-fns';
 import './IncomeDetail.css'
 
 class IncomeDetail extends Component {
@@ -30,6 +31,7 @@ class IncomeDetail extends Component {
        ) || {id:''}
        //console.log('detailIncome', detailIncome , detailIncome.start_time)
         //ßconsole.log(detailIncome);
+       const date = format(new Date(detailIncome.date_created), 'yyyy-MM-dd');
        const start_time = detailIncome.start_time
        const end_time = detailIncome.end_time
        const hourly_payment = detailIncome.hourly_payment
@@ -39,11 +41,11 @@ class IncomeDetail extends Component {
         //console.log(detailIncome)
         return (
             <div className="income_detail">
-                <div className="income_back">
-                    <Link to={'/incomes'}><i className="fas fa-arrow-circle-left">Back</i></Link>
-                </div>
                 <div>
                     <ul className="income_detail_list">
+                    <div className="income_back">
+                        <Link to={'/incomes'}><i className="fas fa-arrow-circle-left">Back</i></Link>
+                    </div>
                         <Income 
                             key={detailIncome.id}
                             id={detailIncome.id}

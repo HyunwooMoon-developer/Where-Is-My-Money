@@ -4,7 +4,7 @@ import myContext from '../../Context/Context'
 import './Income.css'
 import { Link } from 'react-router-dom';
 import TokenService from '../../service/token -service';
-//import {format} from 'date-fns';
+import {format} from 'date-fns';
 
 class Income extends Component {
     static defaultProps = {
@@ -47,10 +47,11 @@ class Income extends Component {
 
     render() {
         const {id, date_created} = this.props;
+        console.log("date : ", date_created)
        
         return (
            <li className="income_item">
-               <h3 className="income_title"><Link to={`/incomes/${id}`}>Date : {date_created} </Link></h3>
+               <h3 className="income_title"><Link to={`/incomes/${id}`}>Date : {format(new Date(date_created), 'yyyy-MM-dd')} </Link></h3>
                <i className="fas fa-mouse-pointer"> Click here</i>
                <br />
                 <Link to={`/edit/incomes/${id}`}><button>Edit</button></Link>
@@ -66,3 +67,5 @@ class Income extends Component {
 }
 
 export default Income;
+
+//format(new DATE(date_created))
