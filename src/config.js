@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-    API_ENDPOINT: `http://localhost:8000`,
+    API_ENDPOINT: `https://warm-plains-24563.herokuapp.com`,
     TOKEN_KEY : 'wimm-client-auth-token'
 }
