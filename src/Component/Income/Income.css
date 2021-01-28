@@ -1,0 +1,23 @@
+.income_item{
+    padding  : 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px black;
+}
+
+.income_title{
+    margin: 20px;
+}
+
+.income_title a{
+    color: white;
+    text-decoration: none;
+}
+
+.income_item h5{
+    color: white;
+    margin: 20px;
+}
+
+.fas{
+    border-radius: 4px;
+}

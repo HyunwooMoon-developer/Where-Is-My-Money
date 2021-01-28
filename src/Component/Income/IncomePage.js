@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../App/App.css';
+import './IncomePage.css'
 import myContext from '../../Context/Context'
 import Income from './Income';
 
@@ -29,14 +29,12 @@ class IncomePage extends Component {
         })
         return (
            <div className="income_page">
-                <div className="income_list">
-                    {incomeList}
-                </div>
-                <div className="income_add">
+                    <ul className="income_list">
+                        {incomeList}
+                    </ul>
                     <Link to={'/add-income'}>
-                         <button className="income_add_button">Add</button>
+                         <button className="fas fa-plus"></button>
                     </Link>
-               </div>
             </div>
         );
     }

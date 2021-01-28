@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import myContext from '../../Context/Context'
-//import {format} from 'date-fns';
+import './Income.css'
 import { Link } from 'react-router-dom';
 import TokenService from '../../service/token -service';
+import {format} from 'date-fns';
 
 class Income extends Component {
     static defaultProps = {
@@ -46,16 +47,18 @@ class Income extends Component {
 
     render() {
         const {id, date_created} = this.props;
+       
         return (
-           <li>
-               <h3><Link to={`/incomes/${id}`}>{date_created}</Link></h3>
-                <h5>created date : {date_created}</h5>
-                <Link to={`/edit/incomes/${id}`}><button>edit</button></Link>
+           <li className="income_item">
+               <h3 className="income_title"><Link to={`/incomes/${id}`}>Date : {date_created} </Link></h3>
+               <i className="fas fa-mouse-pointer"> Click here</i>
+                <Link to={`/edit/incomes/${id}`}><button className="fas fa-edit"></button></Link>
                 <button
                type="button"
                onClick={this.handleCilickDelete}
+               className="fas fa-trash-alt"
                >
-                Delete</button>
+                </button>
            </li>
         );
     }

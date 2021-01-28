@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import myContext from '../../Context/Context'
 import Income from './Income';
+import './IncomeDetail.css'
 
 class IncomeDetail extends Component {
     static defaultProps={
@@ -37,30 +38,30 @@ class IncomeDetail extends Component {
        const dailyTotalIncome = Number(dailyWorkingHour*hourly_payment) + Number(daily_extra)
         //console.log(detailIncome)
         return (
-            <div>
-                <div>
-                    <Link to={'/incomes'}><button>Back</button></Link>
+            <div className="income_detail">
+                <div className="income_back">
+                    <Link to={'/incomes'}><i className="fas fa-arrow-circle-left">Back</i></Link>
                 </div>
-
-                <Income 
-                    key={detailIncome.id}
-                    id={detailIncome.id}
-                    date_created={detailIncome.date_created}
-                    ondeleteIncome={this.handleDeleteIncome}
-                />
-
-                <h4>start_time : {start_time} </h4>
-                <br/>
-                <h4>end_time= {end_time}</h4>
-                <br/>
-                <h4>hourly_payment= $ {hourly_payment}</h4>
-                <br/>
-                <h4>daily_extra= $ {daily_extra}</h4>
-                <br/>
-                <h4>Today's Woriking Hour : {dailyWorkingHour}</h4>
-                <br/>
-                <h4>Today's total Income : $ {dailyTotalIncome}</h4>
-                <br/>
+                <div>
+                    <ul className="income_detail_list">
+                        <Income 
+                            key={detailIncome.id}
+                            id={detailIncome.id}
+                            date_created={detailIncome.date_created}
+                            ondeleteIncome={this.handleDeleteIncome}
+                        />
+                    </ul>
+                </div>
+                <div>
+                    <ul className="indome_detail_info">
+                        <li>start_time : {start_time} </li>
+                        <li>end_time= {end_time}</li>
+                        <li>hourly_payment= $ {hourly_payment}</li>
+                        <li>daily_extra= $ {daily_extra}</li>
+                        <li>Today's Woriking Hour : {dailyWorkingHour}</li>
+                        <li>Today's total Income : $ {dailyTotalIncome}</li>
+                    </ul>
+                </div>
             </div>
         );
     }

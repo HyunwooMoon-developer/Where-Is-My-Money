@@ -1,0 +1,26 @@
+.income_detail{
+    text-align: center;
+    height : 100%;
+    margin: 10px auto;
+    padding: 5px;
+    max-width: 600px;
+    box-shadow: 0 0 2px black;
+}
+
+.income_back{
+    text-align: left;
+}
+
+.income_detail_list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.indome_detail_info{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    line-height: 50px;
+}
