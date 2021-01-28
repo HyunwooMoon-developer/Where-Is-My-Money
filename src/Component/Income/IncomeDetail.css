@@ -1,10 +1,10 @@
 .income_detail{
-    text-align: center;
+    text-align: left;
     height : 100%;
     margin: 10px auto;
     padding: 5px;
     max-width: 600px;
-    box-shadow: 0 0 2px black;
+    line-height: 50px
 }
 
 .income_back{
@@ -14,13 +14,6 @@
 .income_detail_list{
     list-style: none;
     margin: 0;
-    padding: 0;
-}
-
-.indome_detail_info{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    line-height: 50px;
+    padding: 20px;
+    border: 4px solid white;
 }

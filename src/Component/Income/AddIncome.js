@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from '../../config'
 import myContext from '../../Context/Context'
 import TokenService from '../../service/token -service';
+import './AddIncome.css'
 
 class AddIncome extends Component {
     static defaultProps = {
@@ -51,13 +52,12 @@ class AddIncome extends Component {
 
     render() {
         return (
-            <div className="income-main">
-                <div className="calculator">
-                    <h2>Add Income</h2>
+            <div className="income_add">
+                    <h3>Add Income</h3>
                         <br />
-                    <form onSubmit={this.handleSubmit}>    
+                    <form onSubmit={this.handleSubmit} className="income_add_form">    
                         <label htmlFor="start_time">Start Time : </label>
-                        <select id="start_time" name="start_time">
+                        <select id="start_time" name="start_time" required>
                             <option value="0" name="12:00am">12:00 am</option>
                             <option value="0.5" name="12:30am">12:30am</option>
                             <option value="1" name="01:00am">01:00 am</option>
@@ -109,7 +109,7 @@ class AddIncome extends Component {
                         </select>
                         <br />
                         <label htmlFor="end_time">End Time : </label>
-                        <select id="end_time" name="end_time">
+                        <select id="end_time" name="end_time" required>
                             <option value="0" name="12:00am">12:00 am</option>
                             <option value="0.5" name="12:30am">12:30am</option>
                             <option value="1" name="01:00am">01:00 am</option>
@@ -168,6 +168,8 @@ class AddIncome extends Component {
                                 id="hourly_payment"
                                 name="hourly_payment"
                                 placeholder="$12.00" 
+
+                                required
                                 />
                         <br />
                         <label htmlFor="daily_extra">Extra Income : </label>
@@ -179,11 +181,12 @@ class AddIncome extends Component {
                                 placeholder="$10.00"
                                 
                                  />
+                        <br/>
                         <button type="submit">submit</button>
+                        &nbsp; &nbsp; &nbsp;
                         <button type="button" onClick={this.handleClickCancel}>Cancel</button>
                     </div>
                 </form>
-                </div>
             </div>
         );
     }

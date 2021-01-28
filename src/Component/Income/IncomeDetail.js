@@ -50,15 +50,11 @@ class IncomeDetail extends Component {
                             date_created={detailIncome.date_created}
                             ondeleteIncome={this.handleDeleteIncome}
                         />
-                    </ul>
-                </div>
-                <div>
-                    <ul className="indome_detail_info">
                         <li>start_time : {start_time} </li>
                         <li>end_time= {end_time}</li>
                         <li>hourly_payment= $ {hourly_payment}</li>
                         <li>daily_extra= $ {daily_extra}</li>
-                        <li>Today's Woriking Hour : {dailyWorkingHour}</li>
+                        <li>Today's Woriking Hour : {dailyWorkingHour} hr</li>
                         <li>Today's total Income : $ {dailyTotalIncome}</li>
                     </ul>
                 </div>
