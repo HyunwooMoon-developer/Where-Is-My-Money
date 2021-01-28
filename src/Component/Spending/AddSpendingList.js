@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from '../../config';
 import myContext from '../../Context/Context'
 import TokenService from '../../service/token -service';
+import './AddSpendingList.css'
 
 class AddSpendingList extends Component {
     static defaultProps = {
@@ -50,12 +51,14 @@ class AddSpendingList extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Add List</h2>
-                <form onSubmit={this.handleSubmit}>
+            <div className="add_spending_list_page">
+                <h3>Add List</h3>
+                <form onSubmit={this.handleSubmit} className="add_spending_list_form">
                     <label htmlFor="category">Category : </label>
                     <input type="text" name="category" id="category" required/>
+                    <br/>
                     <button type="submit">Add</button>
+                    &nbsp; &nbsp;
                     <button type="button" onClick={this.handleClickCancel}>Cancel</button>
                 </form>
             </div>

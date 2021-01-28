@@ -1,0 +1,31 @@
+.spending_list_nav {
+    border : 3px solid white;
+}
+
+.spending_list_nav a{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+
+}
+
+.spending_list_nav button{
+    display: inline-block;
+    padding: 5px 5px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+    text-align: center;
+}
+
+.spending_list_nav button:hover{
+    background-color: #999;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}

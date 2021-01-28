@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import myContext from '../../Context/Context'
 import SpendingItem from './SpendingItem';
+import './SpendingListItem.css'
 
 class SpendingListItem extends Component {
     static defaultProps = {
@@ -33,8 +35,7 @@ class SpendingListItem extends Component {
         
 
         return (
-            <div>
-            
+            <div className="spending_list_item">           
                <li>
                 {filterItem.map(filterItem => 
                     <SpendingItem 
@@ -44,6 +45,7 @@ class SpendingListItem extends Component {
                     />
                 )}
                </li>
+                <Link to={'/add-item'}><button>add</button></Link>
             </div>
         );
     }

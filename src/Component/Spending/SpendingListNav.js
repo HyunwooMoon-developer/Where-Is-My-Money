@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 import myContext from '../../Context/Context'
 import SpendingList from './SpendingList';
+import './SpendingListNav.css'
 
 class SpendingListNav extends Component {
     static defaultProps= {
@@ -19,8 +20,8 @@ class SpendingListNav extends Component {
         
 
         return (
-            <div>
-                <li><Link to={'/slists'}>All</Link></li>
+            <div className="spending_list_nav">
+                <li><Link to={'/slists'}><h3>All</h3></Link></li>
                 <li>
                 {spendingLists.map(list=>
                     <SpendingList 
@@ -28,7 +29,7 @@ class SpendingListNav extends Component {
                         history={this.props.history}
                         {...list}
                     />)}
-                <Link to={'/add-list'}><button>add</button></Link>
+                    <br />
                 </li>
             </div>
         );

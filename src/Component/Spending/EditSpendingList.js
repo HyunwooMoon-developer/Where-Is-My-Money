@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from '../../config';
 import myContext from '../../Context/Context'
 import TokenService from '../../service/token -service';
+import './EditSpendingList.css'
 
 class EditSpendingList extends Component {
     static defaultProps = {
@@ -92,12 +93,14 @@ class EditSpendingList extends Component {
 
     render() {
         return (
-            <div>
-            <h2>Edit List</h2>
-            <form onSubmit={this.handleUpdate}>
+            <div className="edit_spending_list_page">
+            <h3>Edit List</h3>
+            <form onSubmit={this.handleUpdate} className="edit_spending_list_form">
                 <label htmlFor="category">Category : </label>
                 <input type="text" name="category" id="category" onChange={this.handleCategory} required/>
+                <br />
                 <button type="submit">Edit</button>
+                &nbsp; &nbsp;
                 <button type="button" onClick={this.handleClickCancel}>Cancel</button>
             </form>
         </div>

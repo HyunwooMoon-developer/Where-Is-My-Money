@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import config from '../../config';
 import myContext from '../../Context/Context'
 import TokenService from '../../service/token -service';
+import './SpendingItem.css'
 
 class SpendingItem extends Component {
     static defaultProps= {
@@ -50,13 +51,14 @@ class SpendingItem extends Component {
       //  console.log(category_id)
       // the slist_id is in state 
         return (
-            <div>
-                <h5>{item_name}</h5>
-                <p>{spending}</p>
-                <p>{content}</p>
-                <p>{date_created}</p>
-                <button onClick={this.handleClickDelete}>Delete</button>
+            <div className="spending_item_box">
+                <h3>{item_name}</h3>
+                <p> Spending :  ${spending}</p>
+                <p>Detail : {content}</p>
+                <p>Date : {date_created}</p>
                 <Link to={`/edit/sitems/${id}`}><button>Edit</button></Link>
+                &nbsp;
+                <button onClick={this.handleClickDelete}>Delete</button>
             </div>
         );
     }

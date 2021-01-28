@@ -1,0 +1,19 @@
+.spending_list_item button{
+    display: inline-block;
+    padding: 5px 5px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+    text-align: center;
+}
+
+.spending_list_item button:hover{
+    background-color: #999;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}

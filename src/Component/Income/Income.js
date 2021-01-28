@@ -52,12 +52,13 @@ class Income extends Component {
            <li className="income_item">
                <h3 className="income_title"><Link to={`/incomes/${id}`}>Date : {date_created} </Link></h3>
                <i className="fas fa-mouse-pointer"> Click here</i>
-                <Link to={`/edit/incomes/${id}`}><button className="fas fa-edit"></button></Link>
+               <br />
+                <Link to={`/edit/incomes/${id}`}><button>Edit</button></Link>
                 <button
                type="button"
                onClick={this.handleCilickDelete}
-               className="fas fa-trash-alt"
                >
+                Delete
                 </button>
            </li>
         );

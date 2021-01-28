@@ -29,11 +29,12 @@ class IncomePage extends Component {
         })
         return (
            <div className="income_page">
+               <h2>Here Is Your Income !!</h2>
                     <ul className="income_list">
                         {incomeList}
                     </ul>
                     <Link to={'/add-income'}>
-                         <button className="fas fa-plus"></button>
+                         <button>Add</button>
                     </Link>
             </div>
         );

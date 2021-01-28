@@ -50,9 +50,10 @@ class SpendingList extends Component {
         const {id, category} = this.props;
         return (
             <div>
-               <Link to={`/slists/${id}`}><h4>{category}</h4></Link> 
-               <Link to={`/edit/slists/${id}`}><button>edit</button></Link>             
-               <button onClick={this.handleClickDelete}>delete</button>
+               <Link to={`/slists/${id}`}><h3>{category}</h3></Link> 
+               <Link to={`/edit/slists/${id}`}><button>Edit</button></Link>             
+               &nbsp; 
+               <button onClick={this.handleClickDelete}>Delete</button>
             </div>
         );
     }

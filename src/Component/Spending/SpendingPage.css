@@ -1,0 +1,59 @@
+.spending_page{
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+.spending_list{
+    flex : 0 0 30%;
+    flex : 1;
+    padding-left: 40px;
+}
+
+
+.spending_list ul{
+    list-style: none;
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.spending_item{
+    position: relative;
+    flex : 3;
+    max-width: 1500px;
+    padding-right: 150px;
+}
+
+.spending_item ul{
+    list-style: none;
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.spending_list_add button{
+    display: inline-block;
+    padding: 5px 5px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+    text-align: center;
+}
+
+.spending_list_add button:hover{
+    background-color: #999;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}

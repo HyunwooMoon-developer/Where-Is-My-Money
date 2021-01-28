@@ -1,0 +1,15 @@
+.spending_item_box{
+    border: 3px solid white;
+    text-align: left;
+    padding: 10px;
+}
+
+.spending_item_box h3{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.spending_item_box p{
+    font-weight: bold;
+}

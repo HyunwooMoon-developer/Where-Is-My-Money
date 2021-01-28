@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from '../../config'
 import myContext from '../../Context/Context'
 import TokenService from '../../service/token -service';
+import './AddSpendingItem.css'
 
 class AddSpendingItem extends Component {
     static defaultProps = {
@@ -61,29 +62,35 @@ class AddSpendingItem extends Component {
                                                             </option>)
         //console.log(optionLists)
         return (
-            <div>
-                <h2>Add Item</h2>
-                <form onSubmit={this.handleSubmit}> 
+            <div className="add_spending_item_page">
+                <h3>Add Item</h3>
+                <form onSubmit={this.handleSubmit} className="add_spending_item_form"> 
                     <label htmlFor="item_name">Title : </label>
+                 
                     <input type="text" name="item_name" id="item_name" required/>
                     <br />
                     <label htmlFor="spending">Spending : </label>
+                
                     <input type="number" 
                             min="0.01"
                             step="0.01"
                             id="spending"
-                            name="spending" 
+                            name="spending"
+                            placeholder="$10.00"
                             required/>
                     <br />
-                    <label htmlFor="content">Detail</label>
+                    <label htmlFor="content">Detail : </label>
+              
                     <textarea id="content" name="content" />
                     <br />
                     <label htmlFor="category_id">Category</label>
+                    &nbsp; &nbsp;
                     <select id="category_id" name="category_id">  
                         {optionLists}
                     </select>
                     <br />
                     <button type="submit">Add</button>
+                    &nbsp; &nbsp;
                     <button type="button" onClick={this.handleClickCancel}>cancel</button>
                 </form>
             </div>
