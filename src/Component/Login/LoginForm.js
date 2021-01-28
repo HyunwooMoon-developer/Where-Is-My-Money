@@ -46,10 +46,13 @@ class LoginForm extends Component {
     }
 
     render() {
-       // const {error} = this.state
+        const {error} = this.state
         return (
             <>
                 <form onSubmit={this.handleSubmitJwtAuth} className="login_form">
+                    <div role='alert'>
+                        {error && <p className='red'>{error}</p>}
+                    </div>
                     <label htmlFor="user_name">User name : </label>
                     <input type="text" name="user_name" id="user_name" required/>
                     <br />
