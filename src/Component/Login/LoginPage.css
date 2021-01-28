@@ -1,0 +1,13 @@
+.login_page{
+    text-align: center;
+    height: 100%;
+    margin: 10px auto;
+    padding : 5px;
+    max-width : 1000px;
+}
+
+.login_page h3{
+    color: white;
+    font-size: 40px;
+    border-bottom: 5px solid white;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../service/auth-api-service';
+import './RegistrationForm.css'
 
 class RegistrationForm extends Component {
     static defaultProps = {
@@ -33,32 +34,33 @@ class RegistrationForm extends Component {
     render() {
         //const {error} = this.state
         return (
-            <div>
+            <>
                 <form
-                    onSubmit={this.handleSubmit}>
-                    <label htmlFor="full_name">Full Name</label>
+                    onSubmit={this.handleSubmit} className="register_form">
+                    <label htmlFor="full_name">Full Name : </label>
                     <input 
                         type="text"
                         name="full_name"
                         required
                     />
                     <br />
-                    <label htmlFor="user_name">User Name</label>
+                    <label htmlFor="user_name">User Name : </label>
                     <input
                         type="text"
                         name="user_name"
                         required
                     />
                     <br />
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password : </label>
                     <input
                         type="password"
                         name="password"
                         required
                     />
+                    <br/>
                     <button type="submit">Submit</button>
                     </form>     
-            </div>
+            </>
         );
     }
 }

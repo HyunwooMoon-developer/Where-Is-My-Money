@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../service/auth-api-service';
 import TokenService from '../../service/token -service';
+import './LoginForm.css'
 
 class LoginForm extends Component {
    static defaultProps = {
@@ -47,8 +48,8 @@ class LoginForm extends Component {
     render() {
        // const {error} = this.state
         return (
-            <div>
-                <form onSubmit={this.handleSubmitJwtAuth}>
+            <>
+                <form onSubmit={this.handleSubmitJwtAuth} className="login_form">
                     <label htmlFor="user_name">User name : </label>
                     <input type="text" name="user_name" id="user_name" required/>
                     <br />
@@ -57,7 +58,7 @@ class LoginForm extends Component {
                     <br />
                     <button type="submit">Login</button>
                 </form>
-            </div>
+            </>
         );
     }
 }

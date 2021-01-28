@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
+import './LoginPage.css'
 
 class LoginPage extends Component {
     static defaultProps = {
@@ -18,11 +19,11 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <section>
-                <h2>Log in</h2>
+            <div className="login_page">
+                <h3>Login Page</h3>
                 <LoginForm 
                 onLoginSuccess={this.onLoginSuccess} />
-            </section>
+            </div>
         );
     }
 }

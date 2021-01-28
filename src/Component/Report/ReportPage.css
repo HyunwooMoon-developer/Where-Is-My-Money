@@ -1,0 +1,81 @@
+.report_page{
+    text-align: center;
+    height : 100%;
+    padding: 5px;
+    max-width: 1200px;
+    padding-left: 60px;
+    padding-right: 30px;
+}
+
+.report_total{
+    flex: 0 0 100%;
+    margin-top: 40px;
+    border: 5px solid white;
+    color : white;
+    font-size: 40px;
+    background-color: black;
+}
+
+.report_income_spending{
+    position : relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    box-sizing: border-box;
+    
+}
+
+.report_income{
+    flex: 0 0 50%;
+    border: 5px solid white;
+}
+
+.report_income ul{
+    list-style: none;
+    text-align: left;
+}
+
+.report_income ul li{
+    border-bottom : 3px solid white;
+    line-height: 10px;
+ }
+ 
+ .report_income ul li h3{
+     font-size: 20px;
+     color: white;
+  }
+
+.report_income_total{
+    border-bottom : 5px solid white;
+    color: white;
+    background-color: black;
+    font-size: 30px;
+}
+
+.report_spending{
+    position : relative;
+    flex: 0 0 50%;
+    border: 5px solid white;
+}
+
+.report_spending ul{
+    list-style: none;
+    text-align: left;
+}
+
+.report_spending ul li{
+   border-bottom : 3px solid white;
+   line-height: 10px;
+}
+
+.report_spending ul li h3{
+    font-size: 20px;
+    color: white;
+ }
+
+.report_spending_total{
+    border-bottom : 5px solid white;
+    color: white;
+    background-color: black;
+    font-size: 30px;
+}

@@ -18,12 +18,11 @@ import AddSpendingList from '../Spending/AddSpendingList';
 import EditSpendingItem from '../Spending/EditSpendingItem';
 import EditSpendingList from '../Spending/EditSpendingList';
 import SpendingPage from '../Spending/SpendingPage';
-//import LoginForm from '../Login/LoginForm';
 import LoginPage from '../Login/LoginPage';
-import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import ErrorBoundary from '../../Route/ErrorBoundry/ErrorBoundary';
 import PublicRoute from '../Util/PublicRoute';
 import PrivateRoute from '../Util/PrivateRoute';
+import RegistrationPage from '../RegistrationForm/RegistrationPage';
 
 
 class App extends Component {
@@ -192,7 +191,7 @@ class App extends Component {
           <PrivateRoute path='/edit/sitems/:sitem_id' component={EditSpendingItem} />
           <PrivateRoute path='/report' component={ReportPage} />
           <PublicRoute path='/login' component={LoginPage} />
-          <PublicRoute path='/register' component={RegistrationForm} />
+          <PublicRoute path='/register' component={RegistrationPage} />
           </Switch>
           </myContext.Provider>
           </ErrorBoundary>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import myContext from '../../Context/Context'
+import './ReportPage.css'
 
 class ReportPage extends Component {
 
@@ -26,7 +27,7 @@ class ReportPage extends Component {
             incomeTotal += dailyTotal
             return(
                 <li key={income.id}>
-                    <h4>Date : {income.date_created}</h4>
+                    <h3>Date : {income.date_created}</h3>
                     <p>Working Hour : {dailyWorkingHour} h</p>
                     <p>Daily Labor Cost : $ {dailyWorkingIncome}</p>
                     <p>Extra Income : $ {income.daily_extra}</p>
@@ -39,8 +40,8 @@ class ReportPage extends Component {
             spendingTotal += Number(item.spending)
             return(
                 <li key={item.id}>
-                    <h4>Date : {item.date_created}</h4>
-                    <h4>Where To Use : {item.item_name}</h4>
+                    <h3>Where To Use : {item.item_name}</h3>
+                    <h5>Date : {item.date_created}</h5>
                     <p>Detail :  {item.content}</p>
                     <p>Spending : $ {item.spending}</p>
                 </li>
@@ -49,18 +50,28 @@ class ReportPage extends Component {
 
         
         return (
-            <div className="report-main">
-                            <div className="results">
-                                <h3>{incomeTotal}</h3>
-                                <ul>
-                                    {incomeList}
-                                </ul>
-                                <h3>{spendingTotal}</h3>
-                                <ul>    
-                                  {spendingItemList}
-                                </ul>
-                                <h3>total  : {incomeTotal - spendingTotal}</h3>
-                            </div>
+            <div className="report_page">
+                 <div className="report_total">
+                     <h3>Total In Your Wallet  : {incomeTotal - spendingTotal}</h3>
+                </div>
+                <div className="report_income_spending">
+                    <div className="report_income">
+                        <div className="report_income_total">
+                            <h3>Income Total : $ {incomeTotal}</h3>
+                        </div>
+                        <ul>
+                            {incomeList}
+                        </ul>
+                    </div>
+                    <div className="report_spending">
+                        <div className="report_spending_total">
+                            <h3>Spending Total : $ {spendingTotal}</h3>
+                        </div>
+                        <ul>    
+                            {spendingItemList}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }
