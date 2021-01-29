@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
@@ -53,9 +54,9 @@ class SpendingItem extends Component {
         return (
             <div className="spending_item_box">
                 <h3>{item_name}</h3>
+                <p>Date : {format(new Date(date_created), 'MM/dd/yyyy')}</p>
                 <p> Spending :  ${spending}</p>
                 <p>Detail : {content}</p>
-                <p>Date : {date_created}</p>
                 <Link to={`/edit/sitems/${id}`}><button>Edit</button></Link>
                 &nbsp;
                 <button onClick={this.handleClickDelete}>Delete</button>

@@ -48,7 +48,6 @@
 .report_income_total{
     border-bottom : 5px solid white;
     color: white;
-    background-color: black;
     font-size: 30px;
 }
 
@@ -76,6 +75,5 @@
 .report_spending_total{
     border-bottom : 5px solid white;
     color: white;
-    background-color: black;
     font-size: 30px;
 }

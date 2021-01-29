@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import myContext from '../../Context/Context';
 import LoginForm from './LoginForm';
 import './LoginPage.css'
 
@@ -10,9 +11,12 @@ class LoginPage extends Component {
         },
     }
     
+    static contextType = myContext;
+
     onLoginSuccess = () => {
         const {location, history} = this.props;
         const destination = (location.state || {}).from || '/'
+        this.context.handleLogged(true);
 
         history.push(destination)
     }

@@ -1,11 +1,10 @@
 .main_div{
  position: relative;
- margin-top : 100px;
  width: 100%;
+ margin-top: 40px;
  display: flex;
  justify-content: space-between;
- align-items: center; 
- border: 1px solid black; 
+ align-items: center;
  box-sizing: border-box;
 }
 

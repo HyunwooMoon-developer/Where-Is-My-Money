@@ -23,6 +23,8 @@ import ErrorBoundary from '../../Route/ErrorBoundry/ErrorBoundary';
 import PublicRoute from '../Util/PublicRoute';
 import PrivateRoute from '../Util/PrivateRoute';
 import RegistrationPage from '../RegistrationForm/RegistrationPage';
+import NotFoundPage from '../../Route/NotFoundPage/NotFoundPage';
+import TokenService from '../../service/token -service';
 
 
 class App extends Component {
@@ -143,9 +145,19 @@ class App extends Component {
 
   componentDidMount(){
     this.fetchAll()
+    this.setState({
+      isLoggedIn : TokenService.hasAuthToken(),
+    })
+  }
+
+  handleLogged = x => {
+    this.setState({
+      isLoggedIn : x
+    })
   }
 
   render() {
+    //console.log(this.state.isLoggedIn)
     const contextValues = {
       incomes : this.state.incomes,
       spendingLists : this.state.spendingLists,
@@ -160,18 +172,19 @@ class App extends Component {
       handleUpdateList : this.handleUpdateList,
       handleUpdateItem : this.handleUpdateItem,
       fetchAll  :this.fetchAll,
+      handleLogged : this.handleLogged,
       isLoggedIn :this.state.isLoggedIn,
     }
     //console.log("incomes: ", this.state.incomes)
     return (
       <div className="app">
+        <myContext.Provider value={contextValues}>
         <header className="app_header">
            <h1><Link to={'/'}>$Where is My Money?!</Link></h1>
            <Nav />
         </header>
         <main className="app_main">
           <ErrorBoundary >
-          <myContext.Provider value={contextValues}>
           <Switch>
           <Route exact path='/' component={MainPage} />
           <Route path='/about' component={AboutPage} />
@@ -192,10 +205,11 @@ class App extends Component {
           <PrivateRoute path='/report' component={ReportPage} />
           <PublicRoute path='/login' component={LoginPage} />
           <PublicRoute path='/register' component={RegistrationPage} />
+          <Route component={NotFoundPage} />
           </Switch>
-          </myContext.Provider>
           </ErrorBoundary>
         </main>
+          </myContext.Provider>
       </div>
     );
   }

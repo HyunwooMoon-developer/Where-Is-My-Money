@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React, { Component } from 'react';
 import myContext from '../../Context/Context'
 import './ReportPage.css'
@@ -27,7 +28,7 @@ class ReportPage extends Component {
             incomeTotal += dailyTotal
             return(
                 <li key={income.id}>
-                    <h3>Date : {income.date_created}</h3>
+                    <h3>Date : {format(new Date(income.date_created), 'MM/dd/yyyy')}</h3>
                     <p>Working Hour : {dailyWorkingHour} h</p>
                     <p>Daily Labor Cost : $ {dailyWorkingIncome}</p>
                     <p>Extra Income : $ {income.daily_extra}</p>
@@ -41,7 +42,7 @@ class ReportPage extends Component {
             return(
                 <li key={item.id}>
                     <h3>Where To Use : {item.item_name}</h3>
-                    <h5>Date : {item.date_created}</h5>
+                    <h5>Date : {format(new Date(item.date_created), 'MM/dd/yyyy')}</h5>
                     <p>Detail :  {item.content}</p>
                     <p>Spending : $ {item.spending}</p>
                 </li>
@@ -52,7 +53,7 @@ class ReportPage extends Component {
         return (
             <div className="report_page">
                  <div className="report_total">
-                     <h3>Total In Your Wallet  : {incomeTotal - spendingTotal}</h3>
+                     <h3>Total In Your Wallet  : $ {incomeTotal - spendingTotal}</h3>
                 </div>
                 <div className="report_income_spending">
                     <div className="report_income">

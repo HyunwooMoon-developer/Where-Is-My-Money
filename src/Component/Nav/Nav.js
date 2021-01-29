@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import myContext from '../../Context/Context';
 import TokenService from '../../service/token -service';
 import './Nav.css';
 
 class Nav extends Component {
 
+    static contextType = myContext;
+
+
+
         handleLogout= () => {
             TokenService.clearAuthToken();
+            this.context.handleLogged(false);
         }
 
 
@@ -36,6 +42,7 @@ class Nav extends Component {
         }
 
     render() {
+        //console.log("nav", this.context)
         return (
             <nav className="Header_nav">
                 <ul>
@@ -43,7 +50,7 @@ class Nav extends Component {
                     <li><Link to={'/incomes'}>Income</Link></li>
                     <li><Link to={'/slists'}>Spending</Link></li>
                     <li><Link to={'/report'}>Report</Link></li>
-                        {TokenService.hasAuthToken()
+                        {this.context.isLoggedIn
                             ?this.renderLogout()
                             :this.renderLogin()}
                     </ul>

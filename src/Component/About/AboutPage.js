@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import mainImage from '../img/main-money.jpg'
+import { SocialIcon } from 'react-social-icons';
 import './AboutPage.css'
 
 class AboutPage extends Component {
@@ -19,8 +20,14 @@ class AboutPage extends Component {
                     <h3>Contact Me!!</h3>
                     <p>If you have any further questions on the site, please contact Me here!</p>
                     <br/>
-                    <i class="fas fa-envelope-square"></i>
+                    &nbsp; &nbsp;
+                    <SocialIcon url="mailto:mhw9163@gmail.com" className="contact_icon"/>
+                    &nbsp; &nbsp;
+                    <SocialIcon url="https://www.linkedin.com/in/hyunwoomoon/" target="_blank" className="contact_icon"/>
+                    &nbsp; &nbsp;
+                    <SocialIcon url="https://github.com/HyunwooMoon-developer" target="_blank" className="contact_icon"/>
                     
+
             </div>
         </div>
         

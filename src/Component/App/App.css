@@ -1,5 +1,8 @@
 html{
-   background: linear-gradient(45deg, rgb(118, 245, 196), rgb(77, 204, 255));
+   /*background: rgb(118, 245, 196);*/
+   /*background-image: url('../img/money-stock.jpg');*/
+   background : linear-gradient(rgb(176, 243, 199), rgb(128, 223, 252), rgb(176, 243, 199));
+   background-size: cover;
 }
 
 
@@ -30,8 +33,7 @@ html{
 }
 
 .app_main {
-   height: calc(100vh - 70px);
-   margin-top : 10px;
+   height: 100%;
    padding-bottom: 40px;
 }
 

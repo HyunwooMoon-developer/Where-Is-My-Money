@@ -38,7 +38,7 @@ class Income extends Component {
             return this.context.fetchAll()
         })
         .then(()=> {
-            return this.props.history.push('/incomes')
+            return this.props.onDeleteIncome();
         })
         .catch(err=> {
             console.error(err)
@@ -53,7 +53,7 @@ class Income extends Component {
         return (
            <li className="income_item">
                <h3 className="income_title"><Link to={`/incomes/${id}`}>
-                   Date : {format(new Date(date_created), 'yyyy MM dd')}</Link></h3>
+                   Date : {format(new Date(date_created), 'MM/dd/yyyy')}</Link></h3>
                <br />
                 <Link to={`/edit/incomes/${id}`}><button>Edit</button></Link>
                 <button

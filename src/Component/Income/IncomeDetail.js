@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 //import { number } from 'prop-types';
+import moment from 'moment';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import myContext from '../../Context/Context'
@@ -25,7 +26,24 @@ class IncomeDetail extends Component {
         this.props.history.push('/incomes')
     }
 
+    timeConvert = num => {
+       const hours = Math.floor(num);
+       const minutes = Math.round((num % 1)*100)/100;
+
+       if(minutes === 0){
+        return moment(hours + ':' + minutes * 60 + "0" ,"LT"); 
+        }
+        else{
+            return moment(hours + ':' + minutes * 60 , "LT"); 
+        }
+      
+
+    }
+
+
     render() {
+        //console.log(this.timeConvert(0.5))
+        //console.log(this.timeConvert(23.5));
         const {incomes =[]} = this.context;
         const incomeId = Number(this.props.match.params.income_id)
        //console.log("income/incomeId : ", incomes, incomeId, typeof incomeId)
@@ -42,9 +60,12 @@ class IncomeDetail extends Component {
        const dailyWorkingHour = end_time - start_time
        const dailyTotalIncome = Number(dailyWorkingHour*hourly_payment) + Number(daily_extra)
         //console.log(detailIncome)
+        const Start_time = this.timeConvert(Number(start_time));
+        const End_time = this.timeConvert(Number(end_time));
         if(!detailIncome.date_created){
             return 'LOADING'
         }
+       
         return (
             <div className="income_detail">
                 <div>
@@ -56,12 +77,12 @@ class IncomeDetail extends Component {
                             key={detailIncome.id}
                             id={detailIncome.id}
                             date_created={detailIncome.date_created}
-                            ondeleteIncome={this.handleDeleteIncome}
+                            onDeleteIncome={this.handleDeleteIncome}
                         />
-                        <li>start_time : {start_time} </li>
-                        <li>end_time= {end_time}</li>
-                        <li>hourly_payment= $ {hourly_payment}</li>
-                        <li>daily_extra= $ {daily_extra}</li>
+                        <li>Start Time : {Start_time._i} </li>
+                        <li>End Time : {End_time._i}</li>
+                        <li>Hourly Payment : $ {hourly_payment}</li>
+                        <li>Extra Income :  $ {daily_extra}</li>
                         <li>Today's Woriking Hour : {dailyWorkingHour} hr</li>
                         <li>Today's total Income : $ {dailyTotalIncome}</li>
                     </ul>
@@ -72,10 +93,3 @@ class IncomeDetail extends Component {
 }
 
 export default IncomeDetail;
-
-/*
-start_time={detailIncome.start_time}
-                    end_time={detailIncome.end_time}
-                    hourly_payment={detailIncome.hourly_payment}
-                    daily_extra={detailIncome.daily_extra}
-*/

@@ -51,6 +51,7 @@ class AddIncome extends Component {
     }
 
     render() {
+        console.log(this.context)
         return (
             <div className="income_add">
                     <h3>Add Income</h3>

@@ -4,6 +4,7 @@ const myContext = React.createContext({
     incomes : [],
     spendingLists : [],
     spendingItems : [],
+    isLoggedIn : null,
     handleAddIncome : () => {},
     handleAddLIst  : () => {},
     handleAddItem : () => {},
@@ -14,6 +15,7 @@ const myContext = React.createContext({
     handleUpdateList : () => {},
     handleUpdateItem : () => {},
     fetchAll : () => {},
+    handleLogged : ()=> {},
 })
 
 export default myContext;

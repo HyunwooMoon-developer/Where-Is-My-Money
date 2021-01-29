@@ -8,7 +8,7 @@ describe('SpendingItem Component', ()=> {
         const div = document.createElement('div');
         ReactDOM.render(
             <BrowserRouter>
-                <SpendingItem />
+                <SpendingItem date_created="2021-01-29"/>
             </BrowserRouter>
            , div);
         ReactDOM.unmountComponentAtNode(div);
