@@ -22,35 +22,6 @@ class EditIncome extends Component {
         user_id : '',
     }
 
-    componentDidMount(){
-        const incomeId = this.props.match.params.income_id
-        fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
-            method : 'GET',
-            headers : {
-                'Content-type' : 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-            }
-        })
-        .then(res=> {
-            if(!res.ok)
-            return res.json().then(e=> Promise.reject(e))
-            return res.json()
-        })
-        .then(income=> {
-            this.setState({
-                id: income.id,
-                start_time : income.start_time,
-                end_time : income.end_time,
-                hourly_payment : income.hourly_payment,
-                daily_extra : income.daily_extra,
-                user_id : income.user_id,
-                date_created : income.date_created,
-            })
-        })
-        .catch(err=> {
-            console.error(err)
-        })
-    }
 
     handleStarting = e => {
         this.setState({

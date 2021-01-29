@@ -4,11 +4,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import myContext from '../../Context/Context'
 import Income from './Income';
-import {format} from 'date-fns';
+//import {format} from 'date-fns';
 import './IncomeDetail.css'
 
 class IncomeDetail extends Component {
     static defaultProps={
+        history : {
+            push : ()=>{}
+        },
         match: {
             params : {}
         }
@@ -31,7 +34,7 @@ class IncomeDetail extends Component {
        ) || {id:''}
        //console.log('detailIncome', detailIncome , detailIncome.start_time)
         //ßconsole.log(detailIncome);
-       const date = format(new Date(detailIncome.date_created), 'yyyy-MM-dd');
+       //const date = format(new Date(detailIncome.date_created), 'yyyy-MM-dd');
        const start_time = detailIncome.start_time
        const end_time = detailIncome.end_time
        const hourly_payment = detailIncome.hourly_payment
@@ -39,6 +42,9 @@ class IncomeDetail extends Component {
        const dailyWorkingHour = end_time - start_time
        const dailyTotalIncome = Number(dailyWorkingHour*hourly_payment) + Number(daily_extra)
         //console.log(detailIncome)
+        if(!detailIncome.date_created){
+            return 'LOADING'
+        }
         return (
             <div className="income_detail">
                 <div>

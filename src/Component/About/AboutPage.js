@@ -18,6 +18,9 @@ class AboutPage extends Component {
                     <br/>
                     <h3>Contact Me!!</h3>
                     <p>If you have any further questions on the site, please contact Me here!</p>
+                    <br/>
+                    <i class="fas fa-envelope-square"></i>
+                    
             </div>
         </div>
         

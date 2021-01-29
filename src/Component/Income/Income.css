@@ -13,6 +13,10 @@
     text-decoration: none;
 }
 
+.income_item a:hover{
+    color: hotpink;
+}
+
 .income_item h5{
     color: white;
     margin: 20px;

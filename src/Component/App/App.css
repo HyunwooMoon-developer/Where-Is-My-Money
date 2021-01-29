@@ -1,6 +1,9 @@
+html{
+   background: linear-gradient(45deg, rgb(118, 245, 196), rgb(77, 204, 255));
+}
+
 
 .app{
-   background: linear-gradient(45deg, rgb(118, 245, 196), rgb(77, 204, 255));
    width: 100%;
    max-height : 100vh;
    padding-top : 20px;
@@ -28,7 +31,6 @@
 
 .app_main {
    height: calc(100vh - 70px);
-   overflow: auto;
    margin-top : 10px;
    padding-bottom: 40px;
 }

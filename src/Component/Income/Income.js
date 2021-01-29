@@ -47,12 +47,13 @@ class Income extends Component {
 
     render() {
         const {id, date_created} = this.props;
-        console.log("date : ", date_created)
+        //console.log("date : ", date_created)
+        //console.log(date)
        
         return (
            <li className="income_item">
-               <h3 className="income_title"><Link to={`/incomes/${id}`}>Date : {format(new Date(date_created), 'yyyy-MM-dd')} </Link></h3>
-               <i className="fas fa-mouse-pointer"> Click here</i>
+               <h3 className="income_title"><Link to={`/incomes/${id}`}>
+                   Date : {format(new Date(date_created), 'yyyy MM dd')}</Link></h3>
                <br />
                 <Link to={`/edit/incomes/${id}`}><button>Edit</button></Link>
                 <button
