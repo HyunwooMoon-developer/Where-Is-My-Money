@@ -53,7 +53,7 @@ class Income extends Component {
         return (
            <li className="income_item">
                <h3 className="income_title"><Link to={`/incomes/${id}`}>
-                   Date : {format(new Date(date_created), 'MM/dd/yyyy')}</Link></h3>
+                    {format(new Date(date_created), 'MM/dd/yyyy')}</Link></h3>
                <br />
                 <Link to={`/edit/incomes/${id}`}><button>Edit</button></Link>
                 <button

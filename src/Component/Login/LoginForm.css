@@ -17,7 +17,7 @@
 }
 
 .login_form button:hover{
-    background-color: #999;
+    background-color: rgb(152, 248, 235);
    box-shadow: 0 3px #666;
    transform: translateY(4px);
 }

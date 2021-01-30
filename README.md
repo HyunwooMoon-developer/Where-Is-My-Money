@@ -1,70 +1,181 @@
-# Getting Started with Create React App
+# Where Is My Money
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Application Summary
 
-In the project directory, you can run:
+User can save your wallet with checking income and spending.
+User can register or login and Add, Edit ,or delete Income or Spending.
+The Report page shows compare income and spending and check how much in my pocket.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This link is the front-end client, built in React.  
+https://first-capstone-7jximoi0z.vercel.app/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Application Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screenshot](./src/img/screenshot.jpg)
 
-### `npm run build`
+## What I Use for App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Back End
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node and Express
+  - Authentication via JWT
+  - RESTful Api
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Testing
+  - Supertest(integration)
+  - Mocha and Chai (unit)
 
-### `npm run eject`
+- Database
+  - postgreSQL
+  - knex
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Production
+  - Deployed via Heoku
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Front End
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React
+  - Create React
+  - React Router
+  - React Context
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Testing
+  - Jest(Somke tests)
 
-## Learn More
+- Production
+  - Deployed via Vercel
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Documentation of API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Authorization
 
-### Code Splitting
+- API requests protected endpoints requires the use of a bearer token. 
+- To authenticate an API request, user should provide user's bearer token in the Authorization header.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Where Is My Money's Endpoint
 
-### Analyzing the Bundle Size
+#### Users Endpoint
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```http
+POST  /api/users
+```
 
-### Making a Progressive Web App
+|  Key         | Values               |
+| :------------|----------------------|
+|   user_name  | string, required     |
+|   password   | string, required     |
+|   full_name  | string, required     |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+#### Income Endpoint
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```http
+GET  /api/incomes
+```
 
-### Deployment
+Provides array of all incomes objects
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```http
+GET  /api/incomes/:income_id
+```
 
-### `npm run build` fails to minify
+Provides specific income
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```http
+POST  /api/incomes
+```
+
+Creates a new income. Requires a request body
+
+|  Key         | Values               |
+| :------------|----------------------|
+|   start_time | number, required     |
+|   end_time   | number, required     |
+|hourly_payment| number, required     |
+| daily_extra  | number, optional     |
+
+```http
+DELETE  /api/incomes/:income_id
+```
+Deletes income matching id parameter
+
+```http
+PATCH  /api/incomes/:income_id
+```
+
+Updates income matching id with the fields provided.
+
+
+#### SpendingList Endpoint
+
+```http
+GET  /api/slists
+```
+
+Provides array of all spending lists objects
+
+```http
+GET  /api/slists/:slist_id
+```
+
+Provides specific spending list
+
+```http
+POST  /api/slists
+```
+
+Creates a new spending list. Requires a request body
+
+|  Key         | Values               |
+| :------------|----------------------|
+|   category   | string, required     |
+
+```http
+DELETE  /api/slists/:slist_id
+```
+Deletes spending list matching id parameter
+
+```http
+PATCH  /api/slists/:slist_id
+```
+
+Updates income matching id with the fields provided.
+
+
+#### SpendingItem Endpoint
+
+```http
+GET  /api/sitems
+```
+
+Provides array of all spending items objects
+
+```http
+GET  /api/sitems/:sitem_id
+```
+
+Provides specific spending item
+
+```http
+POST  /api/sitems
+```
+
+Creates a new spending item. Requires a request body
+
+|  Key         | Values               |
+| :------------|----------------------|
+|   category   | string, required     |
+
+```http
+DELETE  /api/sitems/:sitem_id
+```
+Deletes spending list matching id parameter
+
+```http
+PATCH  /api/sitems/:sitem_id
+```
+
+Updates income matching id with the fields provided.
