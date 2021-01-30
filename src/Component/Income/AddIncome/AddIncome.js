@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import config from '../../config'
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config'
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import './AddIncome.css'
 
 class AddIncome extends Component {
@@ -51,7 +51,7 @@ class AddIncome extends Component {
     }
 
     render() {
-        console.log(this.context)
+        //console.log(this.context)
         return (
             <div className="income_add">
                     <h3>Add Income</h3>

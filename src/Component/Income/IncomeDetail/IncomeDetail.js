@@ -3,9 +3,9 @@
 import moment from 'moment';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config'
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import {format} from 'date-fns';
 import './IncomeDetail.css'
 

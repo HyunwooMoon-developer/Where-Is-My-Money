@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config';
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import './AddSpendingList.css'
 
 class AddSpendingList extends Component {
@@ -57,9 +57,9 @@ class AddSpendingList extends Component {
                     <label htmlFor="category">Category : </label>
                     <input type="text" name="category" id="category" required/>
                     <br/>
-                    <button type="submit">Add</button>
+                    <button type="submit" className="add_slists_add">Add</button>
                     &nbsp; &nbsp;
-                    <button type="button" onClick={this.handleClickCancel}>Cancel</button>
+                    <button type="button" onClick={this.handleClickCancel} className="add_slists_cancel">Cancel</button>
                 </form>
             </div>
         );

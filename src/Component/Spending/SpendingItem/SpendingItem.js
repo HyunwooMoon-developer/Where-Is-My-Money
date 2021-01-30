@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config';
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import './SpendingItem.css'
 
 class SpendingItem extends Component {
@@ -53,13 +53,20 @@ class SpendingItem extends Component {
       // the slist_id is in state 
         return (
             <div className="spending_item_box">
+                <div className="spending_item_box_left">
                 <h3>{item_name}</h3>
                 <p>Date : {format(new Date(date_created), 'MM/dd/yyyy')}</p>
                 <p> Spending :  ${spending}</p>
                 <p>Detail : {content}</p>
-                <Link to={`/edit/sitems/${id}`}><button>Edit</button></Link>
-                &nbsp;
-                <button onClick={this.handleClickDelete}>Delete</button>
+                </div>
+                <div className="spending_item_box_right">
+                    <br/>
+                        <Link to={`/edit/sitems/${id}`} ><button className="edit_sitems">Edit</button></Link>
+                    <br/>
+                    <br/>
+                    <br/>          
+                    <button onClick={this.handleClickDelete} className="delete_sitems">Delete</button>
+                </div>
             </div>
         );
     }

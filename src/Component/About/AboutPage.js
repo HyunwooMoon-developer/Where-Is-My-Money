@@ -20,11 +20,11 @@ class AboutPage extends Component {
                     <h3>Contact Me!!</h3>
                     <p>If you have any further questions on the site, please contact Me here!</p>
                     <br/>
-                    &nbsp; &nbsp;
+                    &nbsp; 
                     <SocialIcon url="mailto:mhw9163@gmail.com" className="contact_icon"/>
-                    &nbsp; &nbsp;
+                    &nbsp;
                     <SocialIcon url="https://www.linkedin.com/in/hyunwoomoon/" target="_blank" className="contact_icon"/>
-                    &nbsp; &nbsp;
+                    &nbsp;
                     <SocialIcon url="https://github.com/HyunwooMoon-developer" target="_blank" className="contact_icon"/>
                     
 

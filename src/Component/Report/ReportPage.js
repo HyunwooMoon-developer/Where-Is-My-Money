@@ -32,7 +32,7 @@ class ReportPage extends Component {
                     <p>Working Hour : {dailyWorkingHour} h</p>
                     <p>Daily Labor Cost : $ {dailyWorkingIncome}</p>
                     <p>Extra Income : $ {income.daily_extra}</p>
-                    <p>Daily Total : $ {dailyTotal}</p>
+                    <p>Daily Total : $ {dailyTotal.toFixed(2)}</p>
                 </li>
             )
         })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import config from '../../config'
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config'
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import './AddSpendingItem.css'
 
 class AddSpendingItem extends Component {
@@ -89,9 +89,9 @@ class AddSpendingItem extends Component {
                         {optionLists}
                     </select>
                     <br />
-                    <button type="submit">Add</button>
+                    <button type="submit" className="add_sitems_add">Add</button>
                     &nbsp; &nbsp;
-                    <button type="button" onClick={this.handleClickCancel}>cancel</button>
+                    <button type="button" onClick={this.handleClickCancel} className="add_sitems_cancel">cancel</button>
                 </form>
             </div>
         );

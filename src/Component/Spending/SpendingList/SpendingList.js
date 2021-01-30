@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config';
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
+import './SpendingList.css'
 
 class SpendingList extends Component {
     static defaultProps ={
@@ -11,6 +12,9 @@ class SpendingList extends Component {
         },
 
     };
+    state= {
+        hovering : false,
+    }
     
     static contextType = myContext;
 
@@ -44,16 +48,32 @@ class SpendingList extends Component {
     
     }
 
+    onMouseEnter = () => {
+        this.setState({
+            hovering: true,
+        })
+    }
+
+    onMouseLeave = () => {
+        this.setState({
+            hovering: false,
+        })
+    }
+
     render() {
         //we need to save the 'slist_id' to state somewhere before we route the component
         //
         const {id, category} = this.props;
         return (
-            <div>
-               <Link to={`/slists/${id}`}><h3>{category}</h3></Link> 
-               <Link to={`/edit/slists/${id}`}><button>Edit</button></Link>             
-               &nbsp; 
-               <button onClick={this.handleClickDelete}>Delete</button>
+            <div onMouseEnter={this.onMouseEnter}
+                 onMouseLeave={this.onMouseLeave}>
+                    <Link to={`/slists/${id}`}><h3>{category}</h3></Link> 
+                    {this.state.hovering         
+                    ?<Link to={`/edit/slists/${id}`}><button className="edit_slists_button">Edit</button></Link>
+                    :null}
+                    {this.state.hovering
+                    ?<button onClick={this.handleClickDelete} className="delete_slists_button">Delete</button>
+                    :null}
             </div>
         );
     }

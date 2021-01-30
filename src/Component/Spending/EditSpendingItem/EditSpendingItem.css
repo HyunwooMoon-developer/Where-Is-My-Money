@@ -1,0 +1,52 @@
+.edit_spending_item_page{
+    text-align: center;
+    height: 100%;
+    margin: 10px auto;
+    padding : 5px;
+    max-width: 600px;
+}
+
+.edit_spending_item_page h3{
+    color:black;
+    font-size: 40px;
+    border-bottom : 5px solid black;
+}
+
+.edit_spending_item_form{
+    line-height: 40px;
+    padding: 20px;
+    border: 5px solid black;
+    font-weight: bold;
+}
+
+.edit_sitems_edit{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(0, 209, 70);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.edit_sitems_edit:hover{
+    background-color: rgb(0, 189, 63);
+}
+
+.edit_sitems_cancel{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    color:black;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.edit_sitems_cancel:hover{
+    background-color:rgb(179, 179, 179);
+}

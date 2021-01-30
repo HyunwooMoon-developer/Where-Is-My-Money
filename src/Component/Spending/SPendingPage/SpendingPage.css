@@ -13,6 +13,7 @@
     flex : 0 0 30%;
     flex : 1;
     padding-left: 40px;
+    margin-top: 10px;
 }
 
 
@@ -38,22 +39,20 @@
     padding: 0;
 }
 
-.spending_list_add button{
+.add_slists{
     display: inline-block;
-    padding: 5px 5px;
+    margin-top: 10px;
+    padding: 10px 20px;
     cursor: pointer;
     outline: none;
     color: white;
-    background-color: black;
     font-weight: bold;
-    font-size: 16px;
+    background-color: rgb(0, 209, 70);
     border-radius: 15px;
-    box-shadow: 0 3px #999;
     text-align: center;
+    font-size: 20px;
 }
 
-.spending_list_add button:hover{
-    background-color: #999;
-    box-shadow: 0 3px #666;
-    transform: translateY(4px);
+.add_slists:hover{
+    background-color: rgb(0, 189, 63);
 }

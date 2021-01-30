@@ -1,6 +1,5 @@
 .about_page{
     position: relative;
-
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -9,7 +8,7 @@
 }
 
 .about_left{
-    padding-left: 40px;
+    margin-left: 40px;
     flex: 0 0 50%;
 }
 
@@ -36,7 +35,17 @@
     border-bottom : 5px solid black;
 }
 
-.contact_icon{
-    text-align: center;
-}
 
+/*-----------------------------------------------*/
+
+@media all and (max-width: 800px){
+    .about_page{
+        width: 80%;
+        margin: auto;
+    }
+
+    .about_left{
+        margin-right: 30px;
+    }
+
+}

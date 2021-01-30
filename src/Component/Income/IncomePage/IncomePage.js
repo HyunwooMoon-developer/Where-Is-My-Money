@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './IncomePage.css'
-import myContext from '../../Context/Context'
-import Income from './Income';
+import myContext from '../../../Context/Context';
+import Income from '../Income/Income'
 
 //import IncomeDailyResult from './IncomeDailyResult';
 

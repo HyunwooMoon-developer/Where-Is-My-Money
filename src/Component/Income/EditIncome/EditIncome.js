@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config';
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import './EditIncome.css'
 
 class EditIncome extends Component {
@@ -58,26 +58,29 @@ class EditIncome extends Component {
         //console.log(incomeId)
         const {id, start_time, end_time, hourly_payment, daily_extra ,user_id} = this.state;
         const updatedIncome = {id, start_time, end_time, hourly_payment, daily_extra ,user_id}
+        //console.log(updatedIncome)
 
         fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
             method : 'PATCH',
             headers : {
                 'content-type' : 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body : JSON.stringify(updatedIncome)
         })
         .then(res=>{
-            if(!res.ok)
-            return res.json().then(e=> Promise.reject(e))
+            if(!res.ok){
+                return res.json().then(e=>Promise.reject(e))
+            }
+          //  return res.json()
         })
         .then(()=> {
             return this.context.fetchAll()
         })
         .then(()=>{
-            this.props.history.push('/incomes')
+            return this.props.history.push('/incomes')
         })
-        .catch(err=> {
+        .catch(err=>{
             console.error(err)
         })
     }
@@ -94,7 +97,8 @@ class EditIncome extends Component {
                     <br />
                 <form onSubmit={this.handleUpdate} className="income_edit_form">    
                     <label htmlFor="start_time">Start Time : </label>
-                    <select id="start_time" name="start_time" onChange={this.handleStarting} value={this.state.value} required>
+                    <select id="start_time" name="start_time" onChange={this.handleStarting} value={this.state.value} required >
+                        <option value={null}>...</option>
                         <option value="0" name="12:00am">12:00 am</option>
                         <option value="0.5" name="12:30am">12:30am</option>
                         <option value="1" name="01:00am">01:00 am</option>
@@ -146,7 +150,8 @@ class EditIncome extends Component {
                     </select>
                     <br />
                     <label htmlFor="end_time">End Time : </label>
-                    <select id="end_time" name="end_time" onChange={this.handleEnding} value={this.state.value} required>
+                    <select id="end_time" name="end_time" onChange={this.handleEnding} value={this.state.value} required >
+                        <option value={null}>...</option>
                         <option value="0" name="12:00am">12:00 am</option>
                         <option value="0.5" name="12:30am">12:30am</option>
                         <option value="1" name="01:00am">01:00 am</option>

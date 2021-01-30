@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
-import myContext from '../../Context/Context'
-import SpendingList from './SpendingList';
+import myContext from '../../../Context/Context'
+import SpendingList from '../SpendingList/SpendingList';
 import './SpendingListNav.css'
 
 class SpendingListNav extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config';
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service';
 import './EditSpendingList.css'
 
 class EditSpendingList extends Component {
@@ -20,33 +20,7 @@ class EditSpendingList extends Component {
         user_id : ''
     }
 
-    componentDidMount(){
-        const listId = this.props.match.params.slist_id
-        //console.log(listId)
-        fetch(`${config.API_ENDPOINT}/api/slists/${listId}`,{
-            method: 'GET',
-            headers : {
-                'content-type'  :'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-            },
-        })
-        .then(res => {
-            if(!res.ok){
-                return res.json().then(e=>Promise.reject(e))
-            }
-            return res.json()
-        })
-        .then(list=> {
-            this.setState({
-                id : list.id,
-                category : list.category,
-                user_id : list.user_id
-            })
-        })
-        .catch(err=>{
-            console.error(err)
-        })
-    }
+
 
     handleCategory = e => {
         this.setState({
@@ -99,9 +73,9 @@ class EditSpendingList extends Component {
                 <label htmlFor="category">Category : </label>
                 <input type="text" name="category" id="category" onChange={this.handleCategory} required/>
                 <br />
-                <button type="submit">Edit</button>
+                <button type="submit" className="edit_slists_edit">Submit</button>
                 &nbsp; &nbsp;
-                <button type="button" onClick={this.handleClickCancel}>Cancel</button>
+                <button type="button" onClick={this.handleClickCancel} className="edit_slists_cancel">Cancel</button>
             </form>
         </div>
         );

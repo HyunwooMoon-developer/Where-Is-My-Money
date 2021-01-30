@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import config from '../../config';
-import myContext from '../../Context/Context'
-import TokenService from '../../service/token -service';
+import config from '../../../config'
+import myContext from '../../../Context/Context'
+import TokenService from '../../../service/token -service'
 import './EditSpendingItem.css'
 
 class EditSpendingItem extends Component {
@@ -50,9 +50,10 @@ class EditSpendingItem extends Component {
     handleUpdate = e =>{
         e.preventDefault();
 
-        const itemId = this.props.match.params.sitem_id
+        const itemId = Number(this.props.match.params.sitem_id)
         const {id, category_id, item_name, spending, content} = this.state ; 
         const updateItem = {id, category_id, item_name, spending, content }
+        console.log(updateItem)
     
         fetch(`${config.API_ENDPOINT}/api/sitems/${itemId}`, {
             method : 'PATCH',
@@ -73,6 +74,9 @@ class EditSpendingItem extends Component {
         })
         .then(()=>{
             this.props.history.push('/slists')
+        })
+        .catch(err=>{
+            console.error(err)
         })
     }
 
@@ -108,12 +112,13 @@ class EditSpendingItem extends Component {
                 <label htmlFor="category_id">Category</label>
                 &nbsp; &nbsp;
                 <select id="category_id" name="category_id" onChange={this.handleCategory} value={this.state.value}>  
+                    <option value={null}>...</option>
                     {optionLists}
                 </select>
                 <br />
-                <button type="submit">Edit</button>
+                <button type="submit" className="edit_sitems_edit">Submit</button>
                 &nbsp; &nbsp;
-                <button type="button" onClick={this.handleClickCancel}>cancel</button>
+                <button type="button" onClick={this.handleClickCancel} className="edit_sitems_cancel">cancel</button>
             </form>
         </div>
         );

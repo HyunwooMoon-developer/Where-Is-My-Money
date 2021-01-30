@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import myContext from '../../Context/Context'
+import myContext from '../../../Context/Context'
 import './Income.css'
 import { Link } from 'react-router-dom';
 import {format} from 'date-fns';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import myContext from '../../Context/Context'
-import SpendingItem from './SpendingItem';
+import myContext from '../../../Context/Context'
+import SpendingItem from '../SpendingItem/SpendingItem';
 import './SpendingListItem.css'
 
 class SpendingListItem extends Component {
@@ -45,7 +45,7 @@ class SpendingListItem extends Component {
                     />
                 )}
                </li>
-                <Link to={'/add-item'}><button>add</button></Link>
+                <Link to={'/add-item'}><button className="add_sitems">add</button></Link>
             </div>
         );
     }

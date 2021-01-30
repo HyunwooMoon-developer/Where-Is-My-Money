@@ -20,7 +20,7 @@
 }
 
 .app_header h1{
-   font-size: 4em;
+   font-size: 60px;
    font-weight: bold;
 }
 
@@ -35,7 +35,7 @@
      #cfc09f 26%,
      #cfc09f 27%,
      #ffecb3 40%,
-     #3a2c0f 78% 
+     #3a2c0f 90% 
    );
    color:transparent;
    -webkit-background-clip:text;
@@ -44,7 +44,13 @@
 
 .app_main {
    height: 100%;
-   padding-bottom: 40px;
 }
 
 /*------------------------------------------------*/
+
+@media all and (max-width: 800px){
+   .app_header h1{
+      font-size: 20px;
+   }
+
+}
