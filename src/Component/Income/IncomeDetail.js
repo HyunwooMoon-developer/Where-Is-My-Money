@@ -3,9 +3,10 @@
 import moment from 'moment';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config';
 import myContext from '../../Context/Context'
-import Income from './Income';
-//import {format} from 'date-fns';
+import TokenService from '../../service/token -service';
+import {format} from 'date-fns';
 import './IncomeDetail.css'
 
 class IncomeDetail extends Component {
@@ -22,9 +23,36 @@ class IncomeDetail extends Component {
 
     static contextType = myContext;
 
-    handleDeleteIncome = () => {
-        this.props.history.push('/incomes')
-    }
+    handleCilickDelete = e => {
+        e.preventDefault();
+
+        const incomeId = this.props.match.params.income_id
+
+        //console.log(incomeId)
+        fetch(`${config.API_ENDPOINT}/api/incomes/${incomeId}`,{
+            method : `DELETE`,
+            headers : {
+                'content-type' : 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+        .then(res=> {
+            if(!res.ok){
+                return res.json().then(e=> Promise.reject(e))
+            }
+            //return res.json()
+        })
+        .then(()=> {
+            return this.context.fetchAll()
+        })
+        .then(()=> {
+            return this.props.history.push('/incomes')
+        })
+        .catch(err=> {
+            console.error(err)
+        })
+    }    
+
 
     timeConvert = num => {
        const hours = Math.floor(num);
@@ -53,6 +81,7 @@ class IncomeDetail extends Component {
        //console.log('detailIncome', detailIncome , detailIncome.start_time)
         //ßconsole.log(detailIncome);
        //const date = format(new Date(detailIncome.date_created), 'yyyy-MM-dd');
+       const id = detailIncome.id
        const start_time = detailIncome.start_time
        const end_time = detailIncome.end_time
        const hourly_payment = detailIncome.hourly_payment
@@ -73,18 +102,24 @@ class IncomeDetail extends Component {
                     <div className="income_back">
                         <Link to={'/incomes'}><i className="fas fa-arrow-circle-left">Back</i></Link>
                     </div>
-                        <Income 
-                            key={detailIncome.id}
-                            id={detailIncome.id}
-                            date_created={detailIncome.date_created}
-                            onDeleteIncome={this.handleDeleteIncome}
-                        />
+                    <div className="income_detail_main">
+                        <h3>Total : $ {dailyTotalIncome.toFixed(2)}</h3>
+                        <h3>Date : {format(new Date(detailIncome.date_created), 'MM/dd/yyyy')}</h3>
+                    </div>
                         <li>Start Time : {Start_time._i} </li>
                         <li>End Time : {End_time._i}</li>
                         <li>Hourly Payment : $ {hourly_payment}</li>
                         <li>Extra Income :  $ {daily_extra}</li>
                         <li>Today's Woriking Hour : {dailyWorkingHour} hr</li>
-                        <li>Today's total Income : $ {dailyTotalIncome}</li>
+                        <Link to={`/edit/incomes/${id}`}><button className="edit_income">Edit</button></Link>
+                        &nbsp; &nbsp; &nbsp;
+                        <button
+                            type="button"
+                            onClick={this.handleCilickDelete}
+                            className="delete_income"
+                        >
+                        Delete
+                    </button>
                     </ul>
                 </div>
             </div>

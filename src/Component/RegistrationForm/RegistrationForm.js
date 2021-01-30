@@ -4,8 +4,10 @@ import './RegistrationForm.css'
 
 class RegistrationForm extends Component {
     static defaultProps = {
-        onRegistrationSuccess : () => {}
+        onRegistrationSuccess : () => {},
+
     }
+
 
     state = {error : null}
 
@@ -30,6 +32,7 @@ class RegistrationForm extends Component {
         })
 
     }
+
 
     render() {
         const {error} = this.state
@@ -61,7 +64,8 @@ class RegistrationForm extends Component {
                         required
                     />
                     <br/>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="register_submit">Submit</button>
+                    
                     </form>     
             </>
         );

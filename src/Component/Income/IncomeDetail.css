@@ -9,13 +9,57 @@
 
 .income_back{
     text-align: left;
+    font-size: 20px;    
 }
+
 
 .income_detail_list{
     list-style: none;
     margin: 0;
-    padding: 20px;
-    border: 4px solid white;
+    padding: 10px;
+    border: 4px solid black;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.income_detail_main{
+    border : 4px solid black;
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size : 20px;
+    text-align: center;
+}
+
+.edit_income{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
     color: white;
     font-weight: bold;
+    background-color: rgb(6, 220, 248);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.edit_income:hover{
+    background-color: rgb(0, 165, 187);
+}
+
+.delete_income{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    color:black;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.delete_income:hover{
+    background-color:rgb(179, 179, 179);
 }

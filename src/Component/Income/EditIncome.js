@@ -83,7 +83,7 @@ class EditIncome extends Component {
     }
 
     handleClickCancel = () => {
-        this.props.history.push('/incomes')
+        this.props.history.push(`/incomes/${Number(this.props.match.params.income_id)}`)
     }
 
     render() {
@@ -219,9 +219,9 @@ class EditIncome extends Component {
                             onChange={this.handleExtra}
                              />
                     <br />
-                    <button type="submit">submit</button>
+                    <button type="submit" className="submit_edit_income">submit</button>
                     &nbsp; &nbsp; &nbsp;
-                    <button type="button" onClick={this.handleClickCancel}>Cancel</button>
+                    <button type="button" onClick={this.handleClickCancel} className="cancel_edit_income">Cancel</button>
                 </div>
             </form>
         </div>

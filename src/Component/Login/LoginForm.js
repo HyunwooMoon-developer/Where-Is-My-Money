@@ -53,10 +53,10 @@ class LoginForm extends Component {
                     <div role='alert'>
                         {error && <p className='red'>{error}</p>}
                     </div>
-                    <label htmlFor="user_name">User name : </label>
+                    <label htmlFor="user_name" className="login_p">User name : </label>
                     <input type="text" name="user_name" id="user_name" required/>
                     <br />
-                    <label htmlFor="password">Password : </label>
+                    <label htmlFor="password" className="login_p">Password : </label>
                     <input type="password" name="password" id="password" required/>
                     <br />
                     <button type="submit">Login</button>

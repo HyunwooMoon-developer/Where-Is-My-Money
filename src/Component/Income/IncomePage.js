@@ -8,9 +8,6 @@ import Income from './Income';
 
 class IncomePage extends Component {
 
-    handleDeleteIncome= () => {
-        this.props.history.push('/incomes')
-    }
 
     static contextType = myContext;
 
@@ -23,7 +20,10 @@ class IncomePage extends Component {
                     key={income.id}
                     id={income.id}
                     date_created={income.date_created}
-                    onDeleteIncome ={this.handleDeleteIncome}
+                    start_time={income.start_time}
+                    end_time={income.end_time}
+                    hourly_payment={income.hourly_payment}
+                    daily_extra={income.daily_extra}
                     />
             )
         })
@@ -34,7 +34,7 @@ class IncomePage extends Component {
                         {incomeList}
                     </ul>
                     <Link to={'/add-income'}>
-                         <button>Add</button>
+                         <button className="add_income">Add</button>
                     </Link>
             </div>
         );

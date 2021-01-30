@@ -10,7 +10,8 @@ class MainPage extends Component {
             <div className="main_div">
                 <div className="left">
                     <h2>You can check your money flow!!</h2>
-                    <p>Want to know how much money you earn and how much you spend? Where Is My Money is here! </p>
+                    <p>Want to know how much money you earn and how much you spend?</p>
+                    <p>Where Is My Money is here! </p>
                     <Link to={'/about'}>Learn More</Link>
                 </div>
             <div className="right">

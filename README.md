@@ -12,9 +12,6 @@ This link is the front-end client, built in React.
 https://first-capstone-7jximoi0z.vercel.app/
 
 
-## Application Screenshot
-
-![Screenshot](./src/img/screenshot.jpg)
 
 ## What I Use for App
 

@@ -1,20 +1,17 @@
-html{
-   /*background: rgb(118, 245, 196);*/
-   /*background-image: url('../img/money-stock.jpg');*/
-   background : linear-gradient(rgb(176, 243, 199), rgb(128, 223, 252), rgb(176, 243, 199));
-   background-size: cover;
-}
+
 
 
 .app{
    width: 100%;
    max-height : 100vh;
-   padding-top : 20px;
    padding-bottom: 20px;
    align-items: center;
 }
 
 .app_header{
+   background-color: rgb(27, 21, 21);
+   padding-top: 30px;
+   padding-bottom: 30px;
    width : 100%;
    height: 40px;
    display: flex;
@@ -28,7 +25,20 @@ html{
 }
 
 .app_header h1 a{
-   color: white;
+   transform: translate(-50%, -50%);
+   font-family : 'Playfair Display', serif;
+   letter-spacing: 5px;
+   background-image: linear-gradient(
+      to bottom,
+     #cfc09f 22%,
+     #634f2c 24%,
+     #cfc09f 26%,
+     #cfc09f 27%,
+     #ffecb3 40%,
+     #3a2c0f 78% 
+   );
+   color:transparent;
+   -webkit-background-clip:text;
    text-decoration: none;
 }
 

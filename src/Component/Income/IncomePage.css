@@ -7,26 +7,27 @@
 }
 
 .income_page h2{
-    color: white;
-    font-style : inherit;
+    color:black;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 3px;
     font-size: 2em;
 }
 
-.income_page button{
+.add_income{
     display: inline-block;
+    padding: 10px 20px;
     cursor: pointer;
     outline: none;
     color: white;
-    background-color: black;
+    font-weight: bold;
+    background-color: rgb(0, 209, 70);
     border-radius: 15px;
-    box-shadow: 0 3px #999;
     text-align: center;
+    font-size: 24px;
 }
 
-.income_page button:hover{
-    background-color: #999;
-   box-shadow: 0 3px #666;
-   transform: translateY(4px);
+.add_income:hover{
+    background-color: rgb(0, 189, 63);
 }
 
 .income_list{

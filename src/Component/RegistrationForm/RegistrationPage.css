@@ -7,7 +7,10 @@
 }
 
 .register_page h3{
-    color: white;
+    color: black;
+    font-family: 'Fredoka One', cursive;
     font-size: 40px;
-    border-bottom: 5px solid white;
+    line-height: 70px;
+    letter-spacing: 3px; 
+    border-bottom: 5px solid black;
 }

@@ -180,7 +180,7 @@ class App extends Component {
       <div className="app">
         <myContext.Provider value={contextValues}>
         <header className="app_header">
-           <h1><Link to={'/'}>$Where is My Money?!</Link></h1>
+           <h1><Link to={'/'}>Where is My Money?!</Link></h1>
            <Nav />
         </header>
         <main className="app_main">

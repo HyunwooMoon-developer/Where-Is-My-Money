@@ -162,7 +162,7 @@ class AddIncome extends Component {
                         </select>
                     
                     <div id="calculate">
-                        <label htmlFor="hourly_payment">Hourly-payment : </label>
+                        <label htmlFor="hourly_payment">Hourly payment : </label>
                         <input type="number" 
                                 min="0.01"
                                 step="0.01"
@@ -183,9 +183,9 @@ class AddIncome extends Component {
                                 
                                  />
                         <br/>
-                        <button type="submit">submit</button>
+                        <button type="submit" className="submit_add_income">submit</button>
                         &nbsp; &nbsp; &nbsp;
-                        <button type="button" onClick={this.handleClickCancel}>Cancel</button>
+                        <button type="button" onClick={this.handleClickCancel} className="cancel_add_income">Cancel</button>
                     </div>
                 </form>
             </div>
