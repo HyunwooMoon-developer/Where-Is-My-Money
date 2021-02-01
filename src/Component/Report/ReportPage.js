@@ -53,7 +53,7 @@ class ReportPage extends Component {
         return (
             <div className="report_page">
                  <div className="report_total">
-                     <h3>Total In Your Wallet  : $ {incomeTotal - spendingTotal}</h3>
+                     <h3>Total In Your Wallet  : $ {(incomeTotal - spendingTotal).toFixed(2)}</h3>
                 </div>
                 <div className="report_income_spending">
                     <div className="report_income">
