@@ -1,55 +1,55 @@
-.income_add{
-    text-align: center;
-    height : 100%;
-    margin: 10px auto;
-    padding: 5px;
-    max-width: 600px;
+.income_add {
+  text-align: center;
+  height: 100%;
+  margin: 10px auto;
+  padding: 5px;
+  max-width: 600px;
 }
 
-.income_add h3{
-    color: black;
-    font-family: 'Fredoka One', cursive;
-    letter-spacing: 3px;
-    font-size: 40px;
-    border-bottom : 5px solid black;
+.income_add h3 {
+  color: black;
+  font-family: "Fredoka One", cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  border-bottom: 5px solid black;
 }
 
-.income_add_form{
-    line-height: 40px;
-    text-align: center;
-    padding: 20px;
-    border: 5px solid black;
-    font-weight: bold;
+.income_add_form {
+  line-height: 40px;
+  text-align: center;
+  padding: 20px;
+  border: 5px solid black;
+  font-weight: bold;
 }
 
-.submit_add_income{
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    outline: none;
-    color: white;
-    font-weight: bold;
-    background-color: rgb(0, 209, 70);
-    border-radius: 15px;
-    text-align: center;
+.submit_add_income {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(0, 209, 70);
+  border-radius: 15px;
+  text-align: center;
 }
 
-.submit_add_income:hover{
-    background-color: rgb(0, 189, 63);
+.submit_add_income:hover {
+  background-color: rgb(0, 189, 63);
 }
 
-.cancel_add_income{
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    outline: none;
-    color:black;
-    font-weight: bold;
-    background-color: white;
-    border-radius: 15px;
-    text-align: center;
+.cancel_add_income {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
 }
 
-.cancel_add_income:hover{
-    background-color:rgb(179, 179, 179);
+.cancel_add_income:hover {
+  background-color: rgb(179, 179, 179);
 }

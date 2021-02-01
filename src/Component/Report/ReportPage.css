@@ -1,92 +1,91 @@
-.report_page{
-    text-align: center;
-    height : 100%;
-    max-width: 1200px;
-    padding-left: 60px;
-    padding-right: 30px;
+.report_page {
+  text-align: center;
+  height: 100%;
+  max-width: 1200px;
+  padding-left: 60px;
+  padding-right: 30px;
 }
 
-.report_total{
-    flex: 0 0 100%;
-    margin-top: 40px;
-    border: 5px solid black;
-    color : black;
-    font-family: 'Fredoka One', cursive;
-    letter-spacing: 3px;
-    font-size: 40px;
-    background-color:white;
+.report_total {
+  flex: 0 0 100%;
+  margin-top: 40px;
+  border: 5px solid black;
+  color: black;
+  font-family: "Fredoka One", cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  background-color: white;
 }
 
-.report_income_spending{
-    margin-top: 20px;
-    position : relative;
-    display: flex;
-    justify-content: space-between;
-    align-self: stretch;
-    box-sizing: border-box;
-    
+.report_income_spending {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+  box-sizing: border-box;
 }
 
-.report_income{
-    flex: 0 0 48%;
-    border: 5px solid black;
+.report_income {
+  flex: 0 0 48%;
+  border: 5px solid black;
 }
 
-.report_income ul{
-    list-style: none;
-    text-align: left;
+.report_income ul {
+  list-style: none;
+  text-align: left;
 }
 
-.report_income ul li{
-    border-bottom : 3px solid black;
-    line-height: 10px;
- }
- 
- .report_income ul li h3{
-     font-size: 20px;
-     color: black;
+.report_income ul li {
+  border-bottom: 3px solid black;
+  line-height: 10px;
+}
+
+.report_income ul li h3 {
+  font-size: 20px;
+  color: black;
+}
+
+.report_income_total {
+  border-bottom: 5px solid black;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.report_spending {
+  position: relative;
+  flex: 0 0 48%;
+  border: 5px solid black;
+}
+
+.report_spending ul {
+  list-style: none;
+  text-align: left;
+}
+
+.report_spending ul li {
+  border-bottom: 3px solid black;
+  line-height: 10px;
+}
+
+.report_spending ul li h3 {
+  font-size: 20px;
+  color: black;
+}
+
+.report_spending_total {
+  border-bottom: 5px solid black;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media all and (max-width: 800px) {
+  .report_income ul li {
+    line-height: 20px;
   }
-
-.report_income_total{
-    border-bottom : 5px solid black;
-    color:black;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.report_spending{
-    position : relative;
-    flex: 0 0 48%;
-    border: 5px solid black;
-}
-
-.report_spending ul{
-    list-style: none;
-    text-align: left;
-}
-
-.report_spending ul li{
-   border-bottom : 3px solid black;
-   line-height: 10px;
-}
-
-.report_spending ul li h3{
-    font-size: 20px;
-    color: black;
- }
-
-.report_spending_total{
-    border-bottom : 5px solid black;
-    color:black;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-@media all and (max-width: 800px){
-    .report_income ul li{
-        line-height: 20px;
-    }
-    .report_spending ul li{
-        line-height: 20px;
-    }
+  .report_spending ul li {
+    line-height: 20px;
+  }
 }

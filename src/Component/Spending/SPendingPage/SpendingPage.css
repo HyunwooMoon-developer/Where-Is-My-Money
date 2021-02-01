@@ -1,58 +1,56 @@
-.spending_page{
-    position: relative;
-    text-align: center;
-    margin-top: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    box-sizing: border-box;
+.spending_page {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-.spending_list{
-    flex : 0 0 30%;
-    flex : 1;
-    padding-left: 40px;
-    margin-top: 10px;
+.spending_list {
+  flex: 0 0 30%;
+  flex: 1;
+  padding-left: 40px;
+  margin-top: 10px;
 }
 
-
-.spending_list ul{
-    list-style: none;
-    line-height: 10px;
-    margin: 0;
-    padding: 0;
+.spending_list ul {
+  list-style: none;
+  line-height: 10px;
+  margin: 0;
+  padding: 0;
 }
 
-
-.spending_item{
-    position: relative;
-    flex : 3;
-    max-width: 1500px;
-    padding-right: 150px;
+.spending_item {
+  position: relative;
+  flex: 3;
+  max-width: 1500px;
+  padding-right: 150px;
 }
 
-.spending_item ul{
-    list-style: none;
-    line-height: 10px;
-    margin: 0;
-    padding: 0;
+.spending_item ul {
+  list-style: none;
+  line-height: 10px;
+  margin: 0;
+  padding: 0;
 }
 
-.add_slists{
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    outline: none;
-    color: white;
-    font-weight: bold;
-    background-color: rgb(0, 209, 70);
-    border-radius: 15px;
-    text-align: center;
-    font-size: 20px;
+.add_slists {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(0, 209, 70);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 20px;
 }
 
-.add_slists:hover{
-    background-color: rgb(0, 189, 63);
+.add_slists:hover {
+  background-color: rgb(0, 189, 63);
 }

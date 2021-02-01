@@ -1,56 +1,52 @@
-
-
-
-.app{
-   width: 100%;
-   max-height : 100vh;
-   padding-bottom: 20px;
-   align-items: center;
+.app {
+  width: 100%;
+  max-height: 100vh;
+  padding-bottom: 20px;
+  align-items: center;
 }
 
-.app_header{
-   background-color: rgb(27, 21, 21);
-   padding-top: 30px;
-   padding-bottom: 30px;
-   width : 100%;
-   height: 40px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+.app_header {
+  background-color: rgb(27, 21, 21);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.app_header h1{
-   font-size: 60px;
-   font-weight: bold;
+.app_header h1 {
+  font-size: 60px;
+  font-weight: bold;
 }
 
-.app_header h1 a{
-   transform: translate(-50%, -50%);
-   font-family : 'Playfair Display', serif;
-   letter-spacing: 5px;
-   background-image: linear-gradient(
-      to bottom,
-     #cfc09f 22%,
-     #634f2c 24%,
-     #cfc09f 26%,
-     #cfc09f 27%,
-     #ffecb3 40%,
-     #3a2c0f 90% 
-   );
-   color:transparent;
-   -webkit-background-clip:text;
-   text-decoration: none;
+.app_header h1 a {
+  transform: translate(-50%, -50%);
+  font-family: "Playfair Display", serif;
+  letter-spacing: 5px;
+  background-image: linear-gradient(
+    to bottom,
+    #cfc09f 22%,
+    #634f2c 24%,
+    #cfc09f 26%,
+    #cfc09f 27%,
+    #ffecb3 40%,
+    #3a2c0f 90%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  text-decoration: none;
 }
 
 .app_main {
-   height: 100%;
+  height: 100%;
 }
 
 /*------------------------------------------------*/
 
-@media all and (max-width: 800px){
-   .app_header h1{
-      font-size: 20px;
-   }
-
+@media all and (max-width: 800px) {
+  .app_header h1 {
+    font-size: 20px;
+  }
 }

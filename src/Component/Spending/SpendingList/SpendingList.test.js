@@ -1,16 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import SpendingList from './SpendingList';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import SpendingList from "./SpendingList";
 
-describe('SpendingList Component', ()=> {
-    it('renders without crashing' , ()=> {
-        const div = document.createElement('div');
-        ReactDOM.render(
-            <BrowserRouter>
-                <SpendingList />
-            </BrowserRouter>
-           , div);
-        ReactDOM.unmountComponentAtNode(div);
-    })
-})
+describe("SpendingList Component", () => {
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(
+      <BrowserRouter>
+        <SpendingList />
+      </BrowserRouter>,
+      div
+    );
+    ReactDOM.unmountComponentAtNode(div);
+  });
+});

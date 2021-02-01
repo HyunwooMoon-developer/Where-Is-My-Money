@@ -1,51 +1,47 @@
-.about_page{
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; 
-    box-sizing: border-box;
+.about_page {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-.about_left{
-    margin-left: 40px;
-    flex: 0 0 50%;
+.about_left {
+  margin-left: 40px;
+  flex: 0 0 50%;
 }
 
-.about_left .img{
-    margin-top: 40px;
-    margin-bottom: 20px;
-    width :  100%;
-    border-radius: 10%;
+.about_left .img {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10%;
 }
 
-
-
-.about_right{
-    position: relative;
-    max-width: 600px;
-    padding-right: 60px;
-    box-sizing: border-box;
+.about_right {
+  position: relative;
+  max-width: 600px;
+  padding-right: 60px;
+  box-sizing: border-box;
 }
 
-.about_right h3{
-    font-family: 'Fredoka One', cursive;
-    letter-spacing: 3px;
-    font-size: 40px;
-    border-bottom : 5px solid black;
+.about_right h3 {
+  font-family: "Fredoka One", cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  border-bottom: 5px solid black;
 }
-
 
 /*-----------------------------------------------*/
 
-@media all and (max-width: 800px){
-    .about_page{
-        width: 80%;
-        margin: auto;
-    }
+@media all and (max-width: 800px) {
+  .about_page {
+    width: 80%;
+    margin: auto;
+  }
 
-    .about_left{
-        margin-right: 30px;
-    }
-
+  .about_left {
+    margin-right: 30px;
+  }
 }

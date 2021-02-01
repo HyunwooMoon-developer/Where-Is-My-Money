@@ -1,15 +1,14 @@
 .spending_list_nav {
-    border : 3px solid black;
+  border: 3px solid black;
 }
 
-.spending_list_nav a{
-    color:black;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-
+.spending_list_nav a {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.spending_list_nav a:hover{
-    color: hotpink;
+.spending_list_nav a:hover {
+  color: hotpink;
 }

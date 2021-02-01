@@ -1,21 +1,21 @@
-.register_form{
-    line-height: 40px;
-    padding: 20px;
-    border: 5px solid black;
+.register_form {
+  line-height: 40px;
+  padding: 20px;
+  border: 5px solid black;
 }
 
-.register_submit{
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    outline: none;
-    color: white;
-    font-weight: bold;
-    background-color: rgb(0, 209, 70);
-    border-radius: 15px;
-    text-align: center;
+.register_submit {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(0, 209, 70);
+  border-radius: 15px;
+  text-align: center;
 }
 
-.register_submit:hover{
-    background-color: rgb(0, 189, 63);
+.register_submit:hover {
+  background-color: rgb(0, 189, 63);
 }

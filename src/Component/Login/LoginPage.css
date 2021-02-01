@@ -1,16 +1,16 @@
-.login_page{
-    text-align: center;
-    height: 100%;
-    margin: 10px auto;
-    padding : 5px;
-    max-width : 1000px;
+.login_page {
+  text-align: center;
+  height: 100%;
+  margin: 10px auto;
+  padding: 5px;
+  max-width: 1000px;
 }
 
-.login_page h3{
-    color: black;
-    font-family: 'Fredoka One', cursive;
-    font-size: 40px;
-    line-height: 70px;
-    letter-spacing: 3px; 
-    border-bottom: 5px solid black;
+.login_page h3 {
+  color: black;
+  font-family: "Fredoka One", cursive;
+  font-size: 40px;
+  line-height: 70px;
+  letter-spacing: 3px;
+  border-bottom: 5px solid black;
 }
