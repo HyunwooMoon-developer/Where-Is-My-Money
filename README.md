@@ -15,7 +15,7 @@ https://first-capstone-cdn4y989a.vercel.app/
 
 ## Application Screenshot
 
-![alt tag](https://github.com/HyunwooMoon-developer/Where-Is-My-Money/blob/master/src/Component/img/screenshot.png)
+![Settings window](https://github.com/HyunwooMoon-developer/Where-Is-My-Money/blob/master/src/Component/img/screenshot.png)
 
 ## What I Use for App
 
