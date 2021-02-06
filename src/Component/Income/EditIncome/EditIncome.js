@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { Component } from "react";
 import config from "../../../config";
 import myContext from "../../../Context/Context";
@@ -20,6 +21,9 @@ class EditIncome extends Component {
     hourly_payment: "",
     daily_extra: "",
     user_id: "",
+    start_time_Error : '',
+    end_time_Error : '',
+    hourly_payment_Error : '',
   };
 
   handleStarting = (e) => {
@@ -50,11 +54,37 @@ class EditIncome extends Component {
     });
   };
 
+  validate = () => {
+    let start_time_Error = '';
+    let end_time_Error = '';
+    let hourly_payment_Error = '';
+
+    if(!this.state.start_time){
+      start_time_Error = 'Start Time needs value'
+    }
+    if(!this.state.end_time){
+      end_time_Error = 'End Time needs value'
+    }
+    if(!this.state.hourly_payment){
+      hourly_payment_Error = 'Hourly Payment needs value'
+    }
+
+    if(start_time_Error || end_time_Error || hourly_payment_Error){
+      this.setState({
+        start_time_Error  , end_time_Error , hourly_payment_Error
+      });
+      return false;
+    }
+    return true;
+  }
+
   handleUpdate = (e) => {
     e.preventDefault();
     this.setState({
       error: null,
     });
+
+    this.validate();
 
     const incomeId = Number(this.props.match.params.income_id);
     const {
@@ -109,16 +139,16 @@ class EditIncome extends Component {
   };
 
   render() {
-    const { error } = this.state;
+    const { start_time_Error, end_time_Error, hourly_payment_Error } = this.state;
     // const {start_time, end_time, hourly_payment, daily_extra} = this.state
     return (
       <div className="income_edit">
         <h3>Edit Income</h3>
         <br />
         <form onSubmit={this.handleUpdate} className="income_edit_form">
-          <div role="alert">
-            {error && <p className="red">{error.message}</p>}
-          </div>
+          {start_time_Error?<div className="red">
+            {start_time_Error}
+          </div>:null}
           <label htmlFor="start_time">Start Time : </label>
           <select
             id="start_time"
@@ -275,6 +305,9 @@ class EditIncome extends Component {
           </select>
           <br />
           <label htmlFor="end_time">End Time : </label>
+          {end_time_Error?<div className="red">
+            {end_time_Error}
+          </div>:null}
           <select
             id="end_time"
             name="end_time"
@@ -431,6 +464,9 @@ class EditIncome extends Component {
 
           <div id="calculate">
             <label htmlFor="hourly_payment">Hourly-payment : </label>
+            {hourly_payment_Error?<div className="red">
+            {hourly_payment_Error}
+          </div>:null}
             <input
               type="number"
               min="0.01"
